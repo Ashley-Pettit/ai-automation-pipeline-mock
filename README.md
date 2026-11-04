@@ -17,3 +17,10 @@ Open the live page: https://ashley-pettit.github.io/ai-automation-pipeline-mock/
 Decisions save in your own browser only, so nobody else sees your changes. Use **Import and export > Reset demo data** to start again.
 
 The page is one self-contained file, `index.html`.
+
+## Versions
+
+- **v1**, at the main link above: the reworked flow, from Unassigned to Business review, Dev triage and build. Tagged `v1`.
+- **Polish**, at https://ashley-pettit.github.io/ai-automation-pipeline-mock/polish/: the original process from Assessment to Triage, In progress and Complete, with only the interface tidied.
+
+Each version saves its decisions separately in your browser.
