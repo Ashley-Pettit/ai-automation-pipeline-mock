@@ -21,6 +21,6 @@ The page is one self-contained file, `index.html`.
 ## Versions
 
 - **v1**, at the main link above: the reworked flow, from Unassigned to Business review, Dev triage and build. Tagged `v1`.
-- **Polish**, at https://ashley-pettit.github.io/ai-automation-pipeline-mock/polish/: the original process from Assessment to Triage, In progress and Complete, with only the interface tidied.
+- **v2 (polish)**, at https://ashley-pettit.github.io/ai-automation-pipeline-mock/polish/: the original process from Assessment to Triage, In progress and Complete, with the interface tidied. Open a ticket to assign it to someone from the top of the panel. Assigning never changes a stage or a score.
 
 Each version saves its decisions separately in your browser.
