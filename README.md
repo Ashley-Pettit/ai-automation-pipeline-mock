@@ -1,6 +1,6 @@
 # AI & Automation Pipeline (mock)
 
-A working mock of a council's AI and automation request pipeline. Every request starts in an initial business review, to understand the issue and coach where existing tools already do the job. From there it can go to Dev triage, which sends work to a lightweight Copilot Studio build or to consideration of an enterprise bespoke app.
+A working mock of a council's AI and automation request pipeline. Every request starts Unassigned. Assigning a BA or coach moves it to business review automatically, where they understand the problem, coach on existing tools including Copilot, book AI champion training where appropriate, or draft a business case for Dev triage. Dev triage sends work to a lightweight Copilot Studio build or to consideration of an enterprise bespoke app.
 
 **Everything here is invented.** The council, requests, people and dollar figures are made up for demonstration.
 
@@ -9,7 +9,7 @@ A working mock of a council's AI and automation request pipeline. Every request 
 Open the live page: https://ashley-pettit.github.io/ai-automation-pipeline-mock/
 
 - **Executive** is the summary of the whole pipeline.
-- **Opportunities** lists requests by stage, with list, board and map views. Open a ticket to assign it, mark a meeting and fortnightly coaching as booked, or move it to its next stage. **Assigned to me** shows your own tickets, and "Viewing as" switches person.
+- **Opportunities** lists requests by stage, with list, board and map views. Open a ticket to assign it, mark a meeting, coaching or AI champion training as booked, draft a business case, or move it to its next stage. **Assigned to me** shows your own tickets, and "Viewing as" switches person.
 - **Benefit register** tracks what delivered work has returned.
 
 ## Saving

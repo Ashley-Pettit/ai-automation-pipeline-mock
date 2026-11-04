@@ -1009,6 +1009,29 @@ body:has(.drawer.on) #ui .toasts{left:max(16px,calc(100vw - 704px));bottom:calc(
 :is(#opps,#ui) th.c-val .sortbtn{white-space:normal;text-align:left;line-height:1.2}
 :is(#opps,#ui) #mine-btn[aria-pressed="true"] .tabn{background:none}
 :is(#opps,#ui) .queue .c-stage{width:136px}
+:is(#opps,#ui) .rowicon{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;color:var(--muted);vertical-align:middle;text-decoration:none}
+:is(#opps,#ui) .rowicon:hover{background:var(--soft);color:var(--accent)}
+:is(#opps,#ui) .rowicon+.rowicon{margin-left:4px}
+:is(#opps,#ui) .queue tbody tr:hover .rowicon{color:var(--accent)}
+:is(#opps,#ui) .queue td.c-act{white-space:nowrap}
+:is(#opps,#ui) .queue .c-stage{width:176px}
+:is(#opps,#ui) .btn svg{margin-left:4px;vertical-align:-3px}
+@media (pointer:coarse){:is(#opps,#ui) .rowicon{width:44px;height:44px}
+}
+:is(#opps,#ui) .dr-ctl{gap:8px 32px;align-items:flex-start;margin-top:12px}
+:is(#opps,#ui) .ctl{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0}
+:is(#opps,#ui) .ctl-l{font-size:12px;color:var(--muted)}
+:is(#opps,#ui) .ctl-v{display:inline-flex;align-items:center;flex-wrap:wrap;gap:4px 12px;min-height:40px;font-size:15px;min-width:0}
+:is(#opps,#ui) .ctl-v b{font-weight:bold}
+:is(#opps,#ui) .ctl-v .lnk{font-size:14px;color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+:is(#opps,#ui) .who.big{min-height:40px;margin:0;padding:4px 12px 4px 4px;gap:8px;border-radius:20px;box-shadow:inset 0 0 0 1px var(--rule2)}
+:is(#opps,#ui) button.who.big:hover{background:var(--soft);box-shadow:inset 0 0 0 1px var(--accent)}
+:is(#opps,#ui) .who.big .ava{width:30px;height:30px;font-size:12px}
+:is(#opps,#ui) .who.big .whon{font-size:15px;font-weight:bold}
+:is(#opps,#ui) .who.big.none .whon{color:var(--accent)}
+:is(#opps,#ui) .who.big .caret{font-size:10px;color:var(--muted)}
+@media (min-width:1000px){body:has(.drawer.on) #ui .toasts{left:16px;bottom:16px;max-width:calc(100vw - 752px)}
+}
 
 </style>
 
@@ -1050,7 +1073,7 @@ body:has(.drawer.on) #ui .toasts{left:max(16px,calc(100vw - 704px));bottom:calc(
 <!-- OPPORTUNITIES: list pattern with a slide-over for detail -->
 <section class="view" id="opps" aria-labelledby="opps-h">
   <div class="lead lead-tight">
-    <div><h2 id="opps-h" tabindex="-1">Opportunities</h2><p>Review each request, then send it to Dev triage or resolve it.</p></div>
+    <div><h2 id="opps-h" tabindex="-1">Opportunities</h2><p>A BA or coach reviews each request, then resolves it or sends it on.</p></div>
     <div class="leadside">
       <span class="small" id="tri-n"></span>
       <span class="small" id="tri-who"></span>
@@ -1158,8 +1181,8 @@ const DATA = [{"id":"410349","title":"Fleet service booking reminders","desc":"F
 const SEED = {"410312":{"adj":null,"at":1791684000000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":"enterprise","short":"IT service desk agent","status":"enterprise","team":null},"410349":{"adj":null,"at":1793066400000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Fleet service booking reminders","status":"review","team":null},"410582":{"adj":null,"at":1792893600000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":false,"note":"","outcome":null,"short":"Road defect detection from fleet cameras","status":"devtriage","team":null},"410778":{"adj":null,"at":1792980000000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Vehicle telematics defect detection","status":"review","team":null},"410816":{"adj":null,"at":1791597600000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":"enterprise","short":"Development enquiry assistant","status":"enterprise","team":null},"411051":{"adj":null,"at":1792893600000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Venue self-service booking","status":"review","team":null},"411379":{"adj":null,"at":1792807200000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Asset specification drafting assistant","status":"review","team":null},"411762":{"adj":null,"at":1792461600000,"by":"u_mock_2","byName":"Sam Rivera","comment":"","dupOf":null,"halo":false,"note":"","outcome":"enterprise","short":"Reported phishing email triage","status":"enterprise","team":null},"412001":{"adj":null,"at":1792893600000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":false,"note":"","outcome":null,"short":"Council report drafting","status":"devtriage","team":null},"412241":{"adj":null,"at":1792720800000,"by":"u_mock_2","byName":"Sam Rivera","comment":"","dupOf":null,"halo":false,"note":"Could this start as a Copilot Studio agent over the fleet manual?","outcome":"copilot","short":"Driver induction Q&A","status":"copilot","team":null},"412335":{"adj":null,"at":1792634400000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Cafe stock forecasting","status":"review","team":null},"412482":{"adj":null,"at":1792807200000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":false,"note":"","outcome":null,"short":"Call summary and wrap-up notes","status":"devtriage","team":null},"412724":{"adj":null,"at":1792461600000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Traffic count report automation","status":"review","team":null},"412967":{"adj":null,"at":1792288800000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Fleet replacement forecasting","status":"review","team":null},"413168":{"adj":null,"at":1792548000000,"by":"u_mock_2","byName":"Sam Rivera","comment":"Handed to IT: scheduled report","dupOf":null,"halo":false,"note":"","outcome":"process","short":"Licence reclaim reporting","status":"closed","team":null},"413211":{"adj":null,"at":1792720800000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":false,"note":"","outcome":"copilot","short":"Role description refresh","status":"copilot","team":null},"413658":{"adj":null,"at":1792116000000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Branch budget lookup","status":"review","team":null},"413949":{"adj":null,"at":1793066400000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Casual staff rostering","status":"review","team":null},"414197":{"adj":null,"at":1792980000000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Barking complaint case notes","status":"review","team":null},"414650":{"adj":null,"at":1792375200000,"by":"u_mock_1","byName":"Alex Morgan","comment":"Handed to Governance: owner list and register reminder","dupOf":null,"halo":false,"note":"","outcome":"process","short":"Policy review reminders","status":"closed","team":null},"414696":{"adj":null,"at":1792893600000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Inspection report drafting","status":"review","team":null},"414947":{"adj":null,"at":1792288800000,"by":"u_mock_2","byName":"Sam Rivera","comment":"Booked into Copilot basics","dupOf":null,"halo":false,"note":"","outcome":"coach","short":"Personal task planner","status":"closed","team":null},"415152":{"adj":null,"at":1792375200000,"by":"u_mock_2","byName":"Sam Rivera","comment":"","dupOf":null,"halo":false,"note":"","outcome":"copilot","short":"Marketing copy for events","status":"copilot","team":null},"415199":{"adj":null,"at":1792116000000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":"enterprise","short":"Accounts payable invoice capture","status":"enterprise","team":null},"415658":{"adj":null,"at":1792807200000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Bin contamination detection","status":"review","team":null},"415807":{"adj":null,"at":1792634400000,"by":"u_mock_2","byName":"Sam Rivera","comment":"","dupOf":null,"halo":false,"note":"","outcome":null,"short":"Capital works progress reports","status":"devtriage","team":null},"416168":{"adj":null,"at":1792634400000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Venue invoice matching","status":"review","team":null},"416217":{"adj":{"f":{},"g":{"sponsor":"Pass"},"p":{}},"at":1792461600000,"by":"u_mock_2","byName":"Sam Rivera","comment":"","dupOf":null,"halo":false,"note":"","outcome":"copilot","short":"HR to staff survey data sync","status":"copilot","team":null},"416319":{"adj":null,"at":1792548000000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":false,"note":"","outcome":"copilot","short":"Fleet meeting minutes and actions","status":"copilot","team":null},"416682":{"adj":null,"at":1793066400000,"by":"u_mock_2","byName":"Sam Rivera","comment":"","dupOf":null,"halo":false,"note":"","outcome":null,"short":"Right to information search","status":"devtriage","team":null},"416732":{"adj":null,"at":1792461600000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Food premises inspection notes","status":"review","team":null},"416991":{"adj":null,"at":1792980000000,"by":"u_mock_2","byName":"Sam Rivera","comment":"","dupOf":null,"halo":false,"note":"","outcome":null,"short":"Flood camera monitoring","status":"devtriage","team":null},"417251":{"adj":null,"at":1792634400000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":false,"note":"","outcome":"copilot","short":"Venue contract summaries","status":"copilot","team":null},"417355":{"adj":null,"at":1792288800000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Project status report drafting","status":"review","team":null},"417879":{"adj":null,"at":1792116000000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Dashcam incident review","status":"review","team":null},"418566":{"adj":null,"at":1793066400000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Complaint categorisation","status":"review","team":null},"418778":{"adj":null,"at":1792720800000,"by":"u_mock_1","byName":"Alex Morgan","comment":"Handed to the Power BI team","dupOf":null,"halo":false,"note":"","outcome":"process","short":"Fleet utilisation dashboard","status":"closed","team":null},"418939":{"adj":null,"at":1792980000000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Customer feedback themes","status":"review","team":null},"419312":{"adj":null,"at":1792893600000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Crew timesheet capture","status":"review","team":null},"419636":{"adj":null,"at":1792807200000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Missed bin complaint routing","status":"review","team":null},"420392":{"adj":null,"at":1792634400000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Lease register clean-up","status":"review","team":null},"420996":{"adj":null,"at":1792980000000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":false,"note":"","outcome":null,"short":"Plumbing inspection scheduling","status":"devtriage","team":null},"421659":{"adj":null,"at":1792461600000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Councillor request tracker","status":"review","team":null},"421824":{"adj":null,"at":1792807200000,"by":"u_mock_2","byName":"Sam Rivera","comment":"","dupOf":null,"halo":false,"note":"","outcome":"enterprise","short":"Complaints inbox triage","status":"enterprise","team":null},"422102":{"adj":null,"at":1792980000000,"by":"u_mock_2","byName":"Sam Rivera","comment":"","dupOf":null,"halo":false,"note":"","outcome":"copilot","short":"Media enquiry drafting","status":"copilot","team":null},"422381":{"adj":null,"at":1792288800000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Contract clause comparison","status":"review","team":null},"422942":{"adj":null,"at":1792807200000,"by":"u_mock_1","byName":"Alex Morgan","comment":"Added to the prompt coaching sessions","dupOf":null,"halo":false,"note":"","outcome":"coach","short":"Copilot prompt library","status":"closed","team":null},"423162":{"adj":null,"at":1792116000000,"by":"u_mock_1","byName":"Alex Morgan","comment":"","dupOf":null,"halo":true,"note":"","outcome":null,"short":"Leak allowance assessment","status":"review","team":null},"423507":{"adj":null,"at":1792893600000,"by":"u_mock_2","byName":"Sam Rivera","comment":"Template issued through the PMO","dupOf":null,"halo":false,"note":"","outcome":"process","short":"Benefits tracking template","status":"closed","team":null},"423728":{"adj":null,"at":1792461600000,"by":"u_mock_2","byName":"Sam Rivera","comment":"Coached on Excel with Copilot","dupOf":null,"halo":false,"note":"","outcome":"coach","short":"Help with spreadsheets","status":"closed","team":null},"424298":{"adj":null,"at":1792634400000,"by":"u_mock_1","byName":"Alex Morgan","comment":"Shown the report drafting prompts","dupOf":null,"halo":false,"note":"","outcome":"coach","short":"AI for reports","status":"closed","team":null}};
 const SEED_LOG = [{"id":"seed0","t":"410816","s":"Development enquiry assistant","a":"enterprise","team":null,"comment":"","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1791597600000,"outcome":"enterprise"},{"id":"seed1","t":"410312","s":"IT service desk agent","a":"enterprise","team":null,"comment":"","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1791684000000,"outcome":"enterprise"},{"id":"seed2","t":"415199","s":"Accounts payable invoice capture","a":"enterprise","team":null,"comment":"","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1792116000000,"outcome":"enterprise"},{"id":"seed3","t":"416217","s":"HR to staff survey data sync","a":"copilot","team":null,"comment":"","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1792461600000,"outcome":"copilot"},{"id":"seed4","t":"411762","s":"Reported phishing email triage","a":"enterprise","team":null,"comment":"","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1792461600000,"outcome":"enterprise"},{"id":"seed5","t":"413211","s":"Role description refresh","a":"copilot","team":null,"comment":"","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1792720800000,"outcome":"copilot"},{"id":"seed6","t":"421824","s":"Complaints inbox triage","a":"enterprise","team":null,"comment":"","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1792807200000,"outcome":"enterprise"},{"id":"seed7","t":"410582","s":"Road defect detection from fleet cameras","a":"devtriage","team":null,"comment":"","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1792893600000,"outcome":null},{"id":"seed8","t":"416991","s":"Flood camera monitoring","a":"devtriage","team":null,"comment":"","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1792980000000,"outcome":null},{"id":"seed9","t":"412482","s":"Call summary and wrap-up notes","a":"devtriage","team":null,"comment":"","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1792807200000,"outcome":null},{"id":"seed10","t":"416682","s":"Right to information search","a":"devtriage","team":null,"comment":"","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1793066400000,"outcome":null},{"id":"seed11","t":"412001","s":"Council report drafting","a":"devtriage","team":null,"comment":"","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1792893600000,"outcome":null},{"id":"seed12","t":"415807","s":"Capital works progress reports","a":"devtriage","team":null,"comment":"","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1792634400000,"outcome":null},{"id":"seed13","t":"420996","s":"Plumbing inspection scheduling","a":"devtriage","team":null,"comment":"","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1792980000000,"outcome":null},{"id":"seed14","t":"412241","s":"Driver induction Q&A","a":"copilot","team":null,"comment":"","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1792720800000,"outcome":"copilot"},{"id":"seed15","t":"415152","s":"Marketing copy for events","a":"copilot","team":null,"comment":"","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1792375200000,"outcome":"copilot"},{"id":"seed16","t":"416319","s":"Fleet meeting minutes and actions","a":"copilot","team":null,"comment":"","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1792548000000,"outcome":"copilot"},{"id":"seed17","t":"417251","s":"Venue contract summaries","a":"copilot","team":null,"comment":"","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1792634400000,"outcome":"copilot"},{"id":"seed18","t":"422102","s":"Media enquiry drafting","a":"copilot","team":null,"comment":"","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1792980000000,"outcome":"copilot"},{"id":"seed19","t":"414947","s":"Personal task planner","a":"closed","team":null,"comment":"Booked into Copilot basics","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1792288800000,"outcome":"coach"},{"id":"seed20","t":"423728","s":"Help with spreadsheets","a":"closed","team":null,"comment":"Coached on Excel with Copilot","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1792461600000,"outcome":"coach"},{"id":"seed21","t":"424298","s":"AI for reports","a":"closed","team":null,"comment":"Shown the report drafting prompts","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1792634400000,"outcome":"coach"},{"id":"seed22","t":"422942","s":"Copilot prompt library","a":"closed","team":null,"comment":"Added to the prompt coaching sessions","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1792807200000,"outcome":"coach"},{"id":"seed23","t":"414650","s":"Policy review reminders","a":"closed","team":null,"comment":"Handed to Governance: owner list and register reminder","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1792375200000,"outcome":"process"},{"id":"seed24","t":"413168","s":"Licence reclaim reporting","a":"closed","team":null,"comment":"Handed to IT: scheduled report","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1792548000000,"outcome":"process"},{"id":"seed25","t":"418778","s":"Fleet utilisation dashboard","a":"closed","team":null,"comment":"Handed to the Power BI team","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1792720800000,"outcome":"process"},{"id":"seed26","t":"423507","s":"Benefits tracking template","a":"closed","team":null,"comment":"Template issued through the PMO","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1792893600000,"outcome":"process"},{"id":"seed27","t":"412200","s":"Pool vehicle booking confirmations","a":"closeout","team":null,"comment":"","to":null,"by":"u_mock_2","byName":"Sam Rivera","at":1792375200000},{"id":"seed28","t":"411524","s":"Service desk ticket auto-tagging","a":"closeout","team":null,"comment":"","to":null,"by":"u_mock_1","byName":"Alex Morgan","at":1792548000000},{"id":"seed29","t":"419636","s":"Missed bin complaint routing","a":"assigned","team":null,"comment":"","to":"Robin Hale","by":"u_mock_1","byName":"Alex Morgan","at":1792807200000},{"id":"seed30","t":"420392","s":"Lease register clean-up","a":"assigned","team":null,"comment":"","to":"Alex Morgan","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},{"id":"seed31","t":"421659","s":"Councillor request tracker","a":"assigned","team":null,"comment":"","to":"Sam Rivera","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},{"id":"seed32","t":"422381","s":"Contract clause comparison","a":"assigned","team":null,"comment":"","to":"Rory Tran","by":"u_mock_1","byName":"Alex Morgan","at":1792288800000},{"id":"seed33","t":"423162","s":"Leak allowance assessment","a":"assigned","team":null,"comment":"","to":"Skye Bell","by":"u_mock_1","byName":"Alex Morgan","at":1792116000000}];
 const SEED_ASSIGN = {"410312":{"person":"p_quinn","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"410349":{"person":"p_alex","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"410582":{"person":"p_sam","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"410778":{"person":"p_sam","by":"u_mock_1","byName":"Alex Morgan","at":1792980000000},"410816":{"person":"p_quinn","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"411051":{"person":"p_morgan","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"411379":{"person":"p_casey","by":"u_mock_1","byName":"Alex Morgan","at":1792807200000},"411762":{"person":"p_drew","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"412001":{"person":"p_sam","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"412241":{"person":"p_drew","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"412335":{"person":"p_robin","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"412482":{"person":"p_alex","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"412724":{"person":"p_alex","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"412967":{"person":"p_sam","by":"u_mock_1","byName":"Alex Morgan","at":1792288800000},"413168":{"person":"p_sam","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"413211":{"person":"p_quinn","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"413658":{"person":"p_morgan","by":"u_mock_1","byName":"Alex Morgan","at":1792116000000},"413949":{"person":"p_casey","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"414197":{"person":"p_robin","by":"u_mock_1","byName":"Alex Morgan","at":1792980000000},"414650":{"person":"p_alex","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"414696":{"person":"p_alex","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"414947":{"person":"p_robin","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"415152":{"person":"p_drew","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"415199":{"person":"p_quinn","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"415658":{"person":"p_sam","by":"u_mock_1","byName":"Alex Morgan","at":1792807200000},"415807":{"person":"p_sam","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"416168":{"person":"p_morgan","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"416217":{"person":"p_quinn","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"416319":{"person":"p_drew","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"416682":{"person":"p_sam","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"416732":{"person":"p_casey","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"416991":{"person":"p_morgan","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"417251":{"person":"p_quinn","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"417355":{"person":"p_robin","by":"u_mock_1","byName":"Alex Morgan","at":1792288800000},"417879":{"person":"p_alex","by":"u_mock_1","byName":"Alex Morgan","at":1792116000000},"418566":{"person":"p_sam","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"418778":{"person":"p_sam","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"418939":{"person":"p_morgan","by":"u_mock_1","byName":"Alex Morgan","at":1792980000000},"419312":{"person":"p_casey","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"419636":{"person":"p_robin","by":"u_mock_1","byName":"Alex Morgan","at":1792807200000},"420392":{"person":"p_alex","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"420996":{"person":"p_morgan","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"421659":{"person":"p_sam","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"421824":{"person":"p_drew","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"422102":{"person":"p_quinn","by":"u_mock_1","byName":"Alex Morgan","at":1792634400000},"422381":{"person":"p_morgan","by":"u_mock_1","byName":"Alex Morgan","at":1792288800000},"422942":{"person":"p_casey","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"423162":{"person":"p_casey","by":"u_mock_1","byName":"Alex Morgan","at":1792116000000},"423507":{"person":"p_alex","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"423728":{"person":"p_casey","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000},"424298":{"person":"p_robin","by":"u_mock_1","byName":"Alex Morgan","at":1792461600000}};
-const SEED_REVIEW = {"410349":{"checks":{"meeting":true,"coaching":true,"watch":true,"volume":true,"tools":false},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"410582":{"checks":{"watch":true,"volume":true,"tools":true},"notes":"Watched two inspectors on a route. Footage is already on the fleet cameras. Needs a data-sharing check and a privacy review for faces and plates.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"411379":{"checks":{"meeting":true,"coaching":false,"watch":false,"volume":true,"tools":false},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"412001":{"checks":{"watch":true,"volume":true,"tools":true},"notes":"Report writers reuse old sections. eScribe holds the templates. Sponsor confirmed. Cross-branch, so this needs a proper build.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"412482":{"checks":{"watch":true,"volume":true,"tools":true},"notes":"Sat with two officers. About 90 seconds per call on notes. Transcripts exist in Genesys. Personal information handling is the main question.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"412967":{"checks":{"meeting":true,"coaching":true,"watch":true,"volume":true,"tools":false},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"414197":{"checks":{"meeting":true,"coaching":false,"watch":false,"volume":true,"tools":false},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"415807":{"checks":{"watch":true,"volume":true,"tools":true},"notes":"Eight project managers, a day a month each. Register data is reliable, site emails are not. Owner confirmed.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"416168":{"checks":{"meeting":true,"coaching":true,"watch":true,"volume":true,"tools":false},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"416682":{"checks":{"watch":true,"volume":true,"tools":true},"notes":"Statutory timeframes apply. Redaction decisions must stay with officers. Sensitive data, so an enterprise build is the only safe path.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"416991":{"checks":{"watch":true,"volume":true,"tools":true},"notes":"Duty officers check cameras by hand during events. River sensor feed is confirmed. Needs a clear human checkpoint before any alert goes out.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"417879":{"checks":{"meeting":true,"coaching":false,"watch":false,"volume":true,"tools":false},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"419312":{"checks":{"meeting":true,"coaching":true,"watch":true,"volume":true,"tools":false},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"420996":{"checks":{"watch":true,"volume":true,"tools":true},"notes":"Three inspectors, bookings by phone and email. Needs integration with the inspections system, which is why it is not a user-built agent.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"421659":{"checks":{"meeting":true,"coaching":false,"watch":false,"volume":true,"tools":false},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000}};
-const PEOPLE = [{"id":"p_alex","name":"Alex Morgan","role":"BA"},{"id":"p_sam","name":"Sam Rivera","role":"BA"},{"id":"p_morgan","name":"Rory Tran","role":"BA"},{"id":"p_casey","name":"Skye Bell","role":"Trainer"},{"id":"p_robin","name":"Robin Hale","role":"Trainer"},{"id":"p_drew","name":"Lou Ahmed","role":"Developer"},{"id":"p_quinn","name":"Max Park","role":"Developer"}];
+const SEED_REVIEW = {"410349":{"checks":{"meeting":true,"coaching":true,"training":false},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"410582":{"checks":{"meeting":true,"coaching":false,"training":false},"notes":"Watched two inspectors on a route. Footage is already on the fleet cameras. Needs a data-sharing check and a privacy review for faces and plates.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"411379":{"checks":{"meeting":true,"coaching":false,"training":true},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"412001":{"checks":{"meeting":true,"coaching":false,"training":false},"notes":"Report writers reuse old sections. eScribe holds the templates. Sponsor confirmed. Cross-branch, so this needs a proper build.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"412482":{"checks":{"meeting":true,"coaching":false,"training":false},"notes":"Sat with two officers. About 90 seconds per call on notes. Transcripts exist in Genesys. Personal information handling is the main question.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"412967":{"checks":{"meeting":true,"coaching":true,"training":false},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"414197":{"checks":{"meeting":true,"coaching":false,"training":false},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"415807":{"checks":{"meeting":true,"coaching":false,"training":false},"notes":"Eight project managers, a day a month each. Register data is reliable, site emails are not. Owner confirmed.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"416168":{"checks":{"meeting":true,"coaching":true,"training":true},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"416682":{"checks":{"meeting":true,"coaching":false,"training":false},"notes":"Statutory timeframes apply. Redaction decisions must stay with officers. Sensitive data, so an enterprise build is the only safe path.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"416991":{"checks":{"meeting":true,"coaching":false,"training":false},"notes":"Duty officers check cameras by hand during events. River sensor feed is confirmed. Needs a clear human checkpoint before any alert goes out.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"417879":{"checks":{"meeting":true,"coaching":false,"training":false},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"419312":{"checks":{"meeting":true,"coaching":true,"training":false},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000},"420996":{"checks":{"meeting":true,"coaching":false,"training":false},"notes":"Three inspectors, bookings by phone and email. Needs integration with the inspections system, which is why it is not a user-built agent.","by":"u_mock_1","byName":"Alex Morgan","at":1792893600000},"421659":{"checks":{"meeting":true,"coaching":false,"training":true},"notes":"","by":"u_mock_1","byName":"Alex Morgan","at":1793066400000}};
+const PEOPLE = [{"id":"p_alex","name":"Alex Morgan","role":"BA"},{"id":"p_sam","name":"Sam Rivera","role":"BA"},{"id":"p_morgan","name":"Rory Tran","role":"BA"},{"id":"p_casey","name":"Skye Bell","role":"Coach"},{"id":"p_robin","name":"Robin Hale","role":"Coach"},{"id":"p_drew","name":"Lou Ahmed","role":"Developer"},{"id":"p_quinn","name":"Max Park","role":"Developer"}];
 const DIRS = {"Fleet Services":"Infrastructure and Transport","Roads and Drainage":"Infrastructure and Transport","Transport Planning":"Infrastructure and Transport","Emergency Management":"Infrastructure and Transport","Venues and Events":"Community and Lifestyle","Community Safety":"Community and Lifestyle","Libraries and Arts":"Community and Lifestyle","Parks and Open Space":"Community and Lifestyle","Development Assessment":"Planning and Environment","Strategic Planning":"Planning and Environment","Environmental Health":"Planning and Environment","Waste and Recycling":"Planning and Environment","Governance and Risk":"Corporate Services","Finance":"Corporate Services","Property":"Corporate Services","IT Services":"Corporate Services","People and Culture":"People and Customer","Communications":"People and Customer","Customer Contact":"People and Customer","Water Operations":"City Water","Water Network Planning":"City Water","Project Management Office":"Office of the CEO","Legal Services":"Office of the CEO","Councillor Support":"Office of the CEO","Not stated":"Not stated","Not a use case / blank":"Not a use case / blank"};
 
 // ===== Reference data =====
@@ -1175,15 +1198,16 @@ const QUADS = ['Quick Win', 'Strategic Bet', 'Fill-in', 'Deprioritise'];
 const PL = ['Annual gross savings', 'Strategic alignment', 'Service quality', 'Employee experience', 'Risk / compliance', 'Volume', 'Reusability', 'Equity'], PK = ['savings', 'strategic', 'service', 'employee', 'risk', 'volume', 'reuse', 'equity'];
 const FL = ['Technical feasibility', 'Cost', 'Adoption', 'Complexity', 'Data readiness', 'System integration', 'Change burden'], FK = ['technical', 'cost', 'adoption', 'complexity', 'data', 'integration', 'change'];
 const GL = ['Executive sponsorship', 'Data availability', 'Regulatory pathway', 'Human oversight', 'Explainability', 'Procurement route', 'Success measurable'], GK = ['sponsor', 'data', 'regulatory', 'oversight', 'explainability', 'procurement', 'measurable'];
-const STEPS = [['review', 'Business review', 'Understand the issue, and coach where existing tools will do'], ['devtriage', 'Dev triage', 'Decide between a lightweight Copilot Studio build and an enterprise bespoke app'], ['copilot', 'Copilot Studio', 'Lightweight build, with the requester'], ['enterprise', 'Enterprise', 'Considered as an enterprise bespoke app'], ['done', 'Done', 'Complete or closed'], ['future', 'Parked', 'Parked for later']];
-const STATUS_STEP = {review: 'review', devtriage: 'devtriage', copilot: 'copilot', enterprise: 'enterprise', complete: 'done', closed: 'done', future: 'future'};
-const TL = {review: 'Business review', devtriage: 'Dev triage', copilot: 'Copilot Studio build', enterprise: 'Enterprise bespoke app', complete: 'Complete', closed: 'Closed', future: 'Parked'};
+const STEPS = [['unassigned', 'Unassigned', 'Waiting for a BA or coach. Assigning one starts the business review'], ['review', 'Business review', 'Understand the problem, coach, book training or draft a business case'], ['devtriage', 'Dev triage', 'Decide between a lightweight Copilot Studio build and an enterprise bespoke app'], ['copilot', 'Copilot Studio', 'Lightweight build, with the requester'], ['enterprise', 'Enterprise', 'Considered as an enterprise bespoke app'], ['done', 'Done', 'Complete or closed'], ['future', 'Parked', 'Parked for later']];
+const STATUS_STEP = {unassigned: 'unassigned', review: 'review', devtriage: 'devtriage', copilot: 'copilot', enterprise: 'enterprise', complete: 'done', closed: 'done', future: 'future'};
+const TL = {unassigned: 'Unassigned', review: 'Business review', devtriage: 'Dev triage', copilot: 'Copilot Studio build', enterprise: 'Enterprise bespoke app', complete: 'Complete', closed: 'Closed', future: 'Parked'};
 const HALO_URL = id => `https://example.com/halo/tickets?id=${encodeURIComponent(id)}`;
 const HALO = {review: 'AI Opportunity', devtriage: 'AI Opportunity', copilot: 'AI Use Case', enterprise: 'AI Use Case', complete: 'Resolved', closed: 'Closed', future: 'Future Enhancements'};
 const scopeLbl = {'Council-wide': 'Whole of Council', 'Branch': 'A branch', 'Team': 'A team', 'External Customer': 'Customers and community', 'Me': 'One person'};
 // What each stage can move to, most likely first. A closing reason is recorded with the ticket.
-const OUTCOMES = {coach: 'Coaching', process: 'Process fix', copilot: 'Copilot Studio build', enterprise: 'Enterprise bespoke app'};
+const OUTCOMES = {coach: 'Coaching', process: 'Process fix', training: 'AI champion training', copilot: 'Copilot Studio build', enterprise: 'Enterprise bespoke app'};
 const MOVES = {
+  unassigned: [],
   review: [['devtriage', 'Send to Dev triage'], ['coach', 'Resolved: coaching'], ['process', 'Resolved: process fix']],
   devtriage: [['copilot', 'Copilot Studio build'], ['enterprise', 'Enterprise bespoke app']],
   copilot: [['complete', 'Mark complete']],
@@ -1193,7 +1217,8 @@ const MOVES = {
   future: [['review', 'Bring back']]
 };
 const MOVES_MORE = {
-  review: [['future', 'Park for later'], ['closed', 'Close request'], ['adjust', 'Adjust scores']],
+  unassigned: [['future', 'Park for later'], ['closed', 'Close request'], ['adjust', 'Adjust scores']],
+  review: [['training', 'Resolved: AI champion training'], ['future', 'Park for later'], ['closed', 'Close request'], ['adjust', 'Adjust scores']],
   devtriage: [['review', 'Back to business review'], ['future', 'Park for later'], ['closed', 'Close request'], ['adjust', 'Adjust scores']],
   copilot: [['enterprise', 'Move to Enterprise bespoke app'], ['devtriage', 'Back to Dev triage'], ['future', 'Park for later'], ['closed', 'Close request']],
   enterprise: [['copilot', 'Move to Copilot Studio build'], ['devtriage', 'Back to Dev triage'], ['future', 'Park for later'], ['closed', 'Close request']],
@@ -1202,9 +1227,9 @@ const MOVES_MORE = {
   future: [['closed', 'Close request']]
 };
 const STAGE_NOTE = {copilot: 'A lightweight Copilot Studio build, made with the requester. No enterprise build needed.', enterprise: 'Being considered as an enterprise bespoke app: cross-team, sensitive data or system integration.'};
-const CHECKS = [['watch', 'Watch the current process (desk visit or screen share)'], ['volume', 'Confirm volume, systems and who signs off'], ['tools', 'Check what existing tools already do, and coach if they will do the job']];
-// What the Trainer or BA has booked, shown in the Business review list.
-const BOOKINGS = [['meeting', 'Meeting'], ['coaching', 'Coaching']];
+// What the BA or coach has booked, shown in the Business review list.
+const BOOKINGS = [['meeting', 'Meeting'], ['coaching', 'Coaching'], ['training', 'Training']];
+const BOOKED_LOG = {meeting: 'a meeting', coaching: 'coaching', training: 'AI champion training'};
 const GAPLBL = {'$ estimate given': 'a dollar estimate', 'business owner named': 'the business owner', 'source system named': 'the source system', 'quantifiable answered': 'whether the benefit can be measured', 'reuse answered': 'reuse by other teams', 'description substantive': 'a fuller description', 'team identified': 'the team', 'effort stated': 'the effort today', 'scope stated': 'who it helps'};
 
 // ===== Small helpers =====
@@ -1218,6 +1243,7 @@ const isoDate = iso => new Date(iso + 'T00:00:00');
 const when = ms => ms ? new Date(ms).toLocaleDateString('en-AU', {day: 'numeric', month: 'short', year: 'numeric'}) : '';
 const shortDate = iso => iso ? isoDate(iso).toLocaleDateString('en-AU', {day: 'numeric', month: 'short', year: 'numeric'}) : '';
 const daysSince = iso => iso ? Math.max(0, Math.round((isoDate(ASOF_ISO) - isoDate(iso)) / 864e5)) : 0;
+const lowerFirst = s => /^[A-Z][a-z]/.test(s) ? s[0].toLowerCase() + s.slice(1) : s;
 const plural = (n, one, many) => n === 1 ? one : (many || one + 's');
 // One decimal, rounded down, so a score below the 3.0 threshold never displays as 3.0.
 const s1 = v => (Math.floor(v * 10 + 1e-9) / 10).toFixed(1);
@@ -1257,7 +1283,7 @@ let ME_PERSON = pref('me', 'p_sam'), POP = null;
 let DB = null, USER = null, DL = null, SAMPLE = null, LOCAL = false, CANWRITE = false, CONNECTED = false, SYNCNOTE = '', ME = null, NAMES = {}, LASTIMPORT = null;
 let open = [], done = [], closedL = [], active = [], parked = [];
 const emptyT = () => ({step: '', q: '', band: '', quad: '', pri: '', dir: '', branch: '', assignee: '', preset: ''});
-let T = {...emptyT(), step: 'review'};
+let T = {...emptyT(), step: 'unassigned'};
 let SORT = {key: 'rank', dir: 1}, VIEW = 'list', ROWS = [], SEL = new Set(), KB = null, BOARDALL = {}, CURRENTTAB = 'exec';
 let DR = {id: null, mode: 'view', sections: {}};
 
@@ -1445,16 +1471,16 @@ DATA.forEach(d =>
 function tstat(d)
 {
   const s = TRIAGE[d.id] && TRIAGE[d.id].status;
-  if (s === 'untriaged') return 'review';
+  if (s === 'untriaged' || s === 'review') return assigneeId(d) ? 'review' : 'unassigned';
   if (s && STATUS_STEP[s]) return s;
   if (d.stage === 'Closed') return 'closed';
   if (d.stage === 'Resolved') return 'complete';
   if (d.stage === 'Future Enhancements' && !s) return 'future';
-  return 'review';
+  return assigneeId(d) ? 'review' : 'unassigned';
 }
 function derived(d) { return !(TRIAGE[d.id] && TRIAGE[d.id].status) && ['Closed', 'Resolved', 'Future Enhancements'].includes(d.stage) }
 function step(d) { return STATUS_STEP[tstat(d)] }
-function isNew(d) { return tstat(d) === 'review' && d.created && daysSince(d.created) <= 7 }
+function isNew(d) { return tstat(d) === 'unassigned' && d.created && daysSince(d.created) <= 7 }
 
 /** Derive payoff, feasibility, quadrant, gates, band and action from raw scores. */
 function scorePr(pr, st)
@@ -1546,7 +1572,9 @@ const initials = x => x.name.split(' ').map(w => w[0]).slice(0, 2).join('');
 const avatar = x => `<span class="ava" aria-hidden="true">${esc(initials(x))}</span>`;
 const loadOf = id => DATA.filter(d => assigneeId(d) === id && isOpen(d)).length;
 const bandMark = band => `<span class="dotl"><i style="background:${BCOL[band]}"></i>${esc(band)}</span>`;
-const haloLink = (d, asLink) => `<a class="${asLink ? 'lnk' : 'btn small'}" href="${esc(HALO_URL(d.id))}" target="_blank" rel="noopener" data-tip="Open #${esc(d.id)} in Halo" aria-label="Open ticket ${esc(d.id)} in Halo">Halo ↗</a>`;
+const ICON_HALO = '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M6.5 3.5h-3v9h9v-3M9.5 3.5h3v3M12.5 3.5l-5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICON_MOVE = '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const haloLink = (d, asIcon) => `<a class="${asIcon ? 'rowicon' : 'btn small'}" href="${esc(HALO_URL(d.id))}" target="_blank" rel="noopener" data-tip="Open #${esc(d.id)} in Halo" aria-label="Open ticket ${esc(d.id)} in Halo">${asIcon ? ICON_HALO : `Open in Halo ${ICON_HALO}`}</a>`;
 
 /** Advice only: the move the scores and solution fit point to. The person handling the ticket decides. */
 function suggestedMove(d)
@@ -1561,19 +1589,19 @@ function suggestedMove(d)
   return null;
 }
 
-function assignButton(d)
+function assignButton(d, big)
 {
-  const x = assigneeOf(d), mine = x && x.id === ME_PERSON;
-  if (!CANWRITE) return x ? `<span class="who">${avatar(x)}<span class="whon">${esc(x.name)}</span></span>` : '<span class="small">Unassigned</span>';
-  return `<button type="button" class="who ${x ? '' : 'none'} ${mine ? 'me' : ''}" data-assign="${esc(d.id)}" data-fk="as-${esc(d.id)}" aria-label="${x ? `Assigned to ${esc(x.name)}. Change.` : `Assign ${esc(d.short)}`}">${x ? avatar(x) : '<span class="ava empty" aria-hidden="true">+</span>'}<span class="whon">${x ? esc(x.name) : 'Assign'}</span></button>`;
+  const x = assigneeOf(d), mine = x && x.id === ME_PERSON, size = big ? 'big' : '';
+  if (!CANWRITE) return x ? `<span class="who ${size}">${avatar(x)}<span class="whon">${esc(x.name)}</span></span>` : '<span class="small">Unassigned</span>';
+  return `<button type="button" class="who ${size} ${x ? '' : 'none'} ${mine ? 'me' : ''}" data-assign="${esc(d.id)}" data-fk="as-${esc(d.id)}" aria-label="${x ? `Assigned to ${esc(x.name)}. Change.` : `Assign ${esc(d.short)}`}">${x ? avatar(x) : '<span class="ava empty" aria-hidden="true">+</span>'}<span class="whon">${x ? esc(x.name) : big ? 'Choose a BA or coach' : 'Assign'}</span>${big ? '<span class="caret" aria-hidden="true">▾</span>' : ''}</button>`;
 }
 
 /** One line of the decision log, as a sentence. */
 function logLine(l, self)
 {
   const subject = self ? 'this' : `<b>${esc(l.s)}</b>`;
-  const verb = {complete: 'marked complete', closed: 'closed', future: 'parked', untriaged: 'sent', adjusted: 'adjusted scores on', reset: 'cleared the decision on', closeout: 'recorded the close-out for', review: 'sent', devtriage: 'sent', copilot: 'routed', enterprise: 'routed', assigned: l.to ? 'assigned' : 'removed the assignment from', booked: l.what === 'coaching' ? 'booked fortnightly coaching for' : 'booked a meeting for', unbooked: l.what === 'coaching' ? 'removed fortnightly coaching from' : 'removed the meeting from'}[l.a] || 'updated';
-  const tail = l.a === 'review' || l.a === 'untriaged' ? ' to business review' : l.a === 'devtriage' ? ' to Dev triage' : l.a === 'copilot' ? ' to a Copilot Studio build' : l.a === 'enterprise' ? ' to an enterprise bespoke app' : l.a === 'assigned' && l.to ? ` to ${esc(l.to)}` : l.a === 'closed' && OUTCOMES[l.outcome] ? `: ${esc(OUTCOMES[l.outcome].toLowerCase())}` : '';
+  const verb = {complete: 'marked complete', closed: 'closed', future: 'parked', untriaged: 'sent', adjusted: 'adjusted scores on', reset: 'cleared the decision on', closeout: 'recorded the close-out for', review: 'sent', devtriage: 'sent', copilot: 'routed', enterprise: 'routed', assigned: l.to ? 'assigned' : 'removed the assignment from', booked: `booked ${BOOKED_LOG[l.what] || 'a meeting'} for`, unbooked: `removed ${BOOKED_LOG[l.what] || 'a meeting'} from`}[l.a] || 'updated';
+  const tail = l.a === 'review' || l.a === 'untriaged' ? ' to business review' : l.a === 'devtriage' ? ' to Dev triage' : l.a === 'copilot' ? ' to a Copilot Studio build' : l.a === 'enterprise' ? ' to an enterprise bespoke app' : l.a === 'assigned' && l.to ? ` to ${esc(l.to)}` : l.a === 'closed' && OUTCOMES[l.outcome] ? `: ${esc(lowerFirst(OUTCOMES[l.outcome]))}` : '';
   return `${esc(who(l.by, l.byName))} ${verb} ${subject}${tail}`;
 }
 
@@ -1595,7 +1623,7 @@ const gateIcon = v => v === 'Pass' ? ICON.ok : v === 'Fail' ? ICON.bad : ICON.wa
 
 // ===== Executive and Benefit register =====
 // These two pages stay as on the original, labels included, so the new ticket flow is mapped back to its stages here.
-const ORIG_STATUS = {review: 'untriaged', devtriage: 'approved', copilot: 'in_progress', enterprise: 'in_progress', complete: 'complete', closed: 'closed', future: 'future'};
+const ORIG_STATUS = {unassigned: 'untriaged', review: 'untriaged', devtriage: 'approved', copilot: 'in_progress', enterprise: 'in_progress', complete: 'complete', closed: 'closed', future: 'future'};
 const origStat = d => ORIG_STATUS[tstat(d)];
 const ORIG_STEPS = [['assess', 'Assessment', '#3A8AC3'], ['triage', 'Triage', '#008348'], ['in_progress', 'In progress', '#A2257F'], ['complete', 'Complete', '#420A42'], ['closed', 'Closed', '#C6246B'], ['future', 'Future enhancements', '#5B4237']];
 const ORIG_STEP = {untriaged: 'assess', approved: 'triage', in_progress: 'in_progress', complete: 'complete', closed: 'closed', future: 'future'};
@@ -1682,8 +1710,7 @@ function renderBens()
 
 // ===== Opportunities: filters =====
 const PRESETS = [
-  {k: 'unassigned', l: 'Unassigned', t: d => isOpen(d) && !assigneeId(d)},
-  {k: 'urgent', l: 'High priority, in review', t: d => tstat(d) === 'review' && d.pri === 'High'},
+  {k: 'urgent', l: 'High priority, unassigned', t: d => tstat(d) === 'unassigned' && d.pri === 'High'},
   {k: 'ready', l: 'Ready to start', t: d => !!d.pr.rank},
   {k: 'dups', l: 'Possible duplicates', t: d => d.dups.length > 0 && tstat(d) !== 'closed'},
   {k: 'noai', l: "Doesn't need AI", t: d => !d.ex && d.sf.fit === 'none'},
@@ -1808,7 +1835,7 @@ const fitChipClass = d => { const c = sfClass(d.sf); return c === 'disc' ? 'disc
 const valueText = d => '≈' + fmt$(d.value);
 const valueTip = d => d.est ? 'Rough AI estimate, using the figure the requester gave' : 'Rough AI estimate from effort and scope';
 const bookedText = d => { const c = (REVIEW[d.id] && REVIEW[d.id].checks) || {}; return BOOKINGS.filter(b => c[b[0]]).map(b => b[1]).join(' · ') || '—' };
-const statusLabel = d => { const t = TRIAGE[d.id], st = tstat(d); if (st === 'closed' && t && OUTCOMES[t.outcome]) return `Closed: ${OUTCOMES[t.outcome].toLowerCase()}`; return TL[st] + (derived(d) ? ' (Halo)' : '') };
+const statusLabel = d => { const t = TRIAGE[d.id], st = tstat(d); if (st === 'closed' && t && OUTCOMES[t.outcome]) return `Closed: ${lowerFirst(OUTCOMES[t.outcome])}`; return TL[st] + (derived(d) ? ' (Halo)' : '') };
 
 /** Readiness, quadrant and both scores in one quiet cell. */
 function assessCell(p)
@@ -1829,7 +1856,7 @@ function rowHTML(d)
     <td class="c-val" data-l="Rough AI estimate"><span data-tip="${esc(valueTip(d))}">${esc(valueText(d))}</span></td>
     <td class="c-who" data-l="Assigned">${assignButton(d)}</td>
     <td class="c-stage" data-l="${T.step === 'review' ? 'Booked' : 'Status'}"><div class="small stage-t">${esc(T.step === 'review' ? bookedText(d) : statusLabel(d))}</div></td>
-    <td class="c-act">${hasMoves ? `<button type="button" class="lnk" data-move="${esc(d.id)}" data-fk="mv-${esc(d.id)}">Move <span aria-hidden="true">▾</span></button>` : ''}${haloLink(d, true)}</td>
+    <td class="c-act">${hasMoves ? `<button type="button" class="rowicon" data-move="${esc(d.id)}" data-fk="mv-${esc(d.id)}" data-tip="Move to another stage" aria-label="Move ${esc(d.short)} to another stage">${ICON_MOVE}</button>` : ''}${haloLink(d, true)}</td>
   </tr>`;
 }
 
@@ -1929,7 +1956,7 @@ function renderOpps()
   if (VIEW === 'map') renderMap();
   renderBulk();
   // Progress
-  const n = DATA.filter(d => tstat(d) !== 'review').length;
+  const n = DATA.filter(d => !['unassigned', 'review'].includes(tstat(d))).length;
   $('tri-n').textContent = `Reviewed ${n} of ${DATA.length}`;
   $('tri-who').textContent = SYNCNOTE || (!CONNECTED ? 'Connecting…' : LOCAL ? 'Saved in this browser only' : CANWRITE ? 'Decisions save to this page' : 'Read-only');
   const gone = Object.keys(TRIAGE).filter(k => !byId[k]);
@@ -1949,7 +1976,7 @@ function openDrawer(id, trigger)
   if (!byId[id]) return;
   const wasOpen = !!DR.id;
   if (!wasOpen) DR.trigger = trigger || document.activeElement;
-  DR = {...DR, id, mode: 'view', draft: null, action: null, fu: null, notes: null};
+  DR = {...DR, id, mode: 'view', draft: null, action: null, fu: null, notes: null, bc: null};
   renderDrawer(true);
   $('dr-body').scrollTop = 0;
   if (!wasOpen)
@@ -2007,7 +2034,7 @@ function drawerHead(d)
     <button type="button" class="iconbtn" data-cmd="dr-close" data-fk="dr-close" data-tip="Close panel" aria-label="Close panel">×</button></div>
     <h2 id="dr-title" tabindex="-1">${esc(d.short)}</h2>
     <div class="meta">${esc([d.req, place].filter(Boolean).join(' · '))}${d.pri === 'High' ? ' · <span class="pri">High priority</span>' : ''}</div>
-    <div class="dr-ctl"><span class="ctl"><span class="small">Stage</span> <b>${esc(statusLabel(d))}</b></span><span class="ctl"><span class="small">Assigned</span> ${assignButton(d)}${CANWRITE && !mine && isOpen(d) ? `<button type="button" class="lnk" data-take="${esc(d.id)}" data-fk="me-${esc(d.id)}">Assign to me</button>` : ''}</span></div>`;
+    <div class="dr-ctl"><div class="ctl"><span class="ctl-l">Assigned to</span><span class="ctl-v">${assignButton(d, true)}${CANWRITE && !mine && isOpen(d) && st !== 'unassigned' ? `<button type="button" class="lnk" data-take="${esc(d.id)}" data-fk="me-${esc(d.id)}">Assign to me</button>` : ''}</span></div><div class="ctl"><span class="ctl-l">Stage</span><span class="ctl-v"><b>${esc(statusLabel(d))}</b></span></div></div>`;
 }
 
 const plain = s => String(s).replace(/ — /g, ', ');
@@ -2030,21 +2057,28 @@ function nextBlock(d)
   const st = tstat(d), rv = REVIEW[d.id] || {}, first = String(d.req || 'the requester').split(' ')[0];
   const notes = DR.notes != null ? DR.notes : (rv.notes || '');
   const notesField = `<div class="fld"><label for="rv-notes">Notes</label><textarea id="rv-notes" rows="2" ${CANWRITE ? '' : 'readonly'}>${esc(notes)}</textarea></div>`;
+  const bc = DR.bc != null ? DR.bc : (rv.bizcase || bizCaseText(d));
+  const caseOpen = DR.sections.bizcase != null ? DR.sections.bizcase : (st === 'devtriage' && !!rv.bizcase);
+  const caseFold = `<details class="sect" data-sec="bizcase" ${caseOpen ? 'open' : ''}><summary>${st === 'review' ? 'Draft a business case for Dev triage' : 'Business case'}</summary>
+      <div class="fld"><label for="bc-text">Business case</label><textarea id="bc-text" rows="9" ${CANWRITE ? '' : 'readonly'}>${esc(bc)}</textarea><span class="help">Saved with the ticket and included in the Dev triage agenda.</span></div>
+      <div class="footbtns" style="margin-top:8px"><button type="button" class="btn" data-cmd="bc-copy" data-fk="bc-copy">Copy business case</button></div></details>`;
+  if (st === 'unassigned')
+  {
+    return `<section class="block" aria-label="Unassigned"><h3 class="blockh">Waiting for a BA or coach</h3><p>Assigning someone moves this to business review automatically.</p></section>`;
+  }
   if (st === 'review')
   {
     const tick = (key, label) => `<label><input type="checkbox" data-check="${key}" data-fk="chk-${key}" ${rv.checks && rv.checks[key] ? 'checked' : ''} ${CANWRITE ? '' : 'disabled'}><span>${esc(label)}</span></label>`;
-    const gaps = [...new Set(d.pr.confMissing.map(m => GAPLBL[m]).filter(Boolean))];
     return `<section class="block" aria-label="Initial business review"><h3 class="blockh">Initial business review</h3>
-      <div class="checks two">${tick('meeting', `Meeting booked with ${first}`)}${tick('coaching', 'Booked into fortnightly coaching')}</div>
-      <div class="checks">${CHECKS.map(c => tick(c[0], c[1])).join('')}</div>
-      ${gaps.length ? `<p class="small mb8">Still to find out: ${esc(gaps.join(', '))}.</p>` : ''}
-      ${notesField}</section>`;
+      <p class="small mb8">Understand the problem, coach on existing tools including Copilot, book AI champion training where appropriate, or draft a business case for Dev triage.</p>
+      <div class="checks">${tick('meeting', `Meeting booked with ${first} to understand the issue`)}${tick('coaching', 'Coaching booked on existing tools, including Copilot')}${tick('training', 'Booked into fortnightly AI champion training')}</div>
+      ${notesField}${caseFold}</section>`;
   }
   if (st === 'devtriage')
   {
     return `<section class="block" aria-label="Dev triage"><h3 class="blockh">Dev triage</h3>
       <dl class="routes"><div><dt>Copilot Studio build</dt><dd>Small, low-risk, one team. A lightweight agent, made with the requester.</dd></div><div><dt>Enterprise bespoke app</dt><dd>Cross-team, sensitive data or system integration.</dd></div></dl>
-      ${notesField}</section>`;
+      ${notesField}${caseFold}</section>`;
   }
   if (STAGE_NOTE[st]) return `<section class="block" aria-label="Stage"><p>${esc(STAGE_NOTE[st])}</p></section>`;
   return '';
@@ -2067,6 +2101,7 @@ function drawerBody(d)
   const sug = suggestedMove(d);
   const sugLabel = sug ? (MOVES[st].find(m => m[0] === sug) || [])[1] : null;
   const gatesPass = GK.filter(k => p.g[k] === 'Pass').length;
+  const gaps = [...new Set(p.confMissing.map(m => GAPLBL[m]).filter(Boolean))];
   const F = [['Halo status', SL[d.stage] || d.stage], ['Raised', d.created ? shortDate(d.created) : null], ['Requester', d.req], ['Business owner named', d.ownerNamed ? 'Yes' : 'No'], ['Who is impacted', d.scope], ['Team impacted', d.team], ['Directorate', d.dir], ['Branch', d.branch], ['Current effort', d.effort], ['Requester priority', d.pri], ['Challenges', (d.chal || []).join(', ')], ['Expected benefits', (d.ben || []).join(', ')], ['Requester estimate', d.est ? fmt$(d.est) : null], ['Benefit verifier', d.verifier], ['What changed', d.changed], ['Outcome realised', d.outcome], ['Evidence', d.evidence], ['Reusable elsewhere', d.reuse]];
   return `<section class="block" aria-label="The request"><p class="ask">${d.desc && d.desc !== d.blurb ? esc(d.desc) : esc(d.blurb || 'No description provided.')}</p><p class="factline">${esc(facts)}</p></section>
     ${decision}
@@ -2076,6 +2111,7 @@ function drawerBody(d)
       ${sugLabel ? `<p>Suggested: <b>${esc(sugLabel.replace(/^Send to /, ''))}</b> <span class="small">Advice only.</span></p>` : ''}
       <p class="small">${esc(p.band)} · ${esc(p.quadrant)} · Payoff ${s1(p.payoff)} · Feasibility ${s1(p.feas)} · ${esc(p.confBand)} confidence</p></section>
     <details class="sect" data-sec="detail" ${secOpen('detail')}><summary>Assessment detail</summary>
+      ${gaps.length ? `<p class="small mb8">Still to find out: ${esc(gaps.join(', '))}.</p>` : ''}
       ${solutionFitBlock(d)}
       <h4 class="h4gap">Readiness gates · ${gatesPass} of 7 pass</h4>
       <div class="gates">${GK.map((k, i) => `<div class="gate">${gateIcon(p.g[k])}<div><div class="gl">${esc(GL[i])}: ${esc(p.g[k])}</div><div class="ge">${esc(adjNote('g', k) || p.gev[k])}</div></div></div>`).join('')}</div>
@@ -2090,6 +2126,12 @@ function drawerBody(d)
       <div class="fields">${F.map(([k, v]) => `<div><div class="lbl">${esc(k)}</div>${v ? esc(v) : '<span class="empty">—</span>'}</div>`).join('')}</div>
       <h4 class="h4gap">Decision history</h4>
       <div class="hist">${hist.map(l => `<div><span>${logLine(l, true)}${l.comment ? `. ${esc(l.comment)}` : ''}</span><span class="small">${esc(when(l.at))}</span></div>`).join('') || '<p class="empty">No decisions recorded yet.</p>'}</div></details>`;
+}
+
+/** A starting draft of the business case, from what the ticket already says. */
+function bizCaseText(d)
+{
+  return [`Business case: ${d.short} (#${d.id})`, '', `Problem: ${d.desc || d.blurb || ''}`, `Who it helps: ${scopeLbl[d.scope] || 'Not stated'}${d.branch && !d.branch.startsWith('Not ') ? `, ${d.branch}` : ''}`, `Effort today: ${d.effort || 'Not stated'}`, `Rough AI estimate: ${valueText(d)} a year`, `Simplest solution: ${plain(d.sf.clsLabel)}`, 'Existing tools checked, including Copilot: ', 'Why it needs Dev triage: '].join('\n');
 }
 
 /** Draft a requester follow-up from the evidence gaps found by solution fit and scoring. */
@@ -2142,7 +2184,8 @@ function drawerFoot(d)
   }
   const st = tstat(d), main = MOVES[st], rest = MOVES_MORE[st], sug = suggestedMove(d);
   const primary = sug || (main[0] && main[0][0]);
-  return `<div class="footbtns">${main.map(([a, l]) => `<button type="button" class="btn ${a === primary ? 'primary' : ''}" data-act="${a}" data-id="${esc(d.id)}" data-fk="act-${a}">${esc(l)}</button>`).join('')}${rest.length ? `<button type="button" class="btn quiet" data-more="${esc(d.id)}" data-fk="dr-more">More <span aria-hidden="true">▾</span></button>` : ''}</div>`;
+  const lead = st === 'unassigned' ? `<button type="button" class="btn primary" data-take="${esc(d.id)}" data-fk="me-${esc(d.id)}">Assign to me</button>` : '';
+  return `<div class="footbtns">${lead}${main.map(([a, l]) => `<button type="button" class="btn ${a === primary ? 'primary' : ''}" data-act="${a}" data-id="${esc(d.id)}" data-fk="act-${a}">${esc(l)}</button>`).join('')}${rest.length ? `<button type="button" class="btn quiet" data-more="${esc(d.id)}" data-fk="dr-more">More <span aria-hidden="true">▾</span></button>` : ''}</div>`;
 }
 
 /** Draw the slide-over. Snapshots from other viewers don't interrupt a form someone is filling in. */
@@ -2318,9 +2361,9 @@ async function act(id, a)
 async function applyMove(ids, key)
 {
   const label = ids.length === 1 ? byId[ids[0]].short : `${ids.length} requests`;
-  if (key === 'coach' || key === 'process')
+  if (key === 'coach' || key === 'process' || key === 'training')
   {
-    await decide(ids, 'closed', {outcome: key}, `Closed ${label}: ${OUTCOMES[key].toLowerCase()}`);
+    await decide(ids, 'closed', {outcome: key}, `Closed ${label}: ${lowerFirst(OUTCOMES[key])}`);
     return;
   }
   if (key === 'closed' || key === 'future')
@@ -2328,7 +2371,7 @@ async function applyMove(ids, key)
     await decide(ids, key, {}, `${key === 'closed' ? 'Closed' : 'Parked'} ${label}`);
     return;
   }
-  const verb = `Moved ${label} to ${TL[key]}`;
+  const verb = `Moved ${label} to ${key === 'review' && ids.every(id => !assigneeId(byId[id])) ? 'Unassigned' : TL[key]}`;
   await decide(ids, key, key === 'copilot' || key === 'enterprise' ? {outcome: key} : {outcome: null, comment: ''}, verb);
 }
 
@@ -2337,6 +2380,7 @@ async function assignTo(ids, pid)
 {
   if (!DB || !CANWRITE) return;
   const before = ids.map(id => [id, ASSIGN[id] ? {...ASSIGN[id]} : null]), logIds = [], x = person(pid);
+  const started = pid && ids.some(id => tstat(byId[id]) === 'unassigned');
   try
   {
     for (const id of ids)
@@ -2352,7 +2396,7 @@ async function assignTo(ids, pid)
     return;
   }
   const label = ids.length === 1 ? byId[ids[0]].short : `${ids.length} requests`;
-  toast(pid ? `Assigned ${label} to ${pid === ME_PERSON ? 'you' : x.name}` : `Removed the assignment from ${label}`, async () =>
+  toast(pid ? `Assigned ${label} to ${pid === ME_PERSON ? 'you' : x.name}${started ? '. Now in Business review' : ''}` : `Removed the assignment from ${label}`, async () =>
   {
     try
     {
@@ -2377,7 +2421,7 @@ async function saveReview(id, patch)
   const cur = REVIEW[id] || {};
   try
   {
-    await docOf('review', id).set({checks: cur.checks || {}, notes: cur.notes || '', ...patch, by: ME, at: Date.now()});
+    await docOf('review', id).set({checks: cur.checks || {}, notes: cur.notes || '', bizcase: cur.bizcase || '', ...patch, by: ME, at: Date.now()});
   }
   catch (e)
   {
@@ -2417,7 +2461,7 @@ function assignList(ids, filter)
   const hits = PEOPLE.filter(x => !f || `${x.name} ${x.role}`.toLowerCase().includes(f));
   const me = hits.filter(x => x.id === ME_PERSON), rest = hits.filter(x => x.id !== ME_PERSON);
   const reviewers = rest.filter(x => x.role !== 'Developer').sort((a, b) => loadOf(a.id) - loadOf(b.id)), devs = rest.filter(x => x.role === 'Developer').sort((a, b) => loadOf(a.id) - loadOf(b.id));
-  return (me.map(row).join('') + (reviewers.length ? `<h5>Trainers and BAs, least busy first</h5>${reviewers.map(row).join('')}` : '') + (devs.length ? `<h5>Developers</h5>${devs.map(row).join('')}` : '')) || '<p class="small" style="padding:8px">Nobody matches that name.</p>';
+  return (me.map(row).join('') + (reviewers.length ? `<h5>BAs and coaches, least busy first</h5>${reviewers.map(row).join('')}` : '') + (devs.length ? `<h5>Developers</h5>${devs.map(row).join('')}` : '')) || '<p class="small" style="padding:8px">Nobody matches that name.</p>';
 }
 
 function openAssignPop(anchor, ids)
@@ -2442,7 +2486,7 @@ function openMovePop(anchor, ids)
   }
   else
   {
-    items = [['review', 'Business review'], ['devtriage', 'Dev triage'], ['copilot', 'Copilot Studio build'], ['enterprise', 'Enterprise bespoke app'], ['future', 'Park for later'], ['closed', 'Close requests']].map(m => [m[0], m[1], false]);
+    items = [['devtriage', 'Dev triage'], ['copilot', 'Copilot Studio build'], ['enterprise', 'Enterprise bespoke app'], ['future', 'Park for later'], ['closed', 'Close requests']].map(m => [m[0], m[1], false]);
   }
   $('pop').innerHTML = items.map(([k, l, s]) => `<button type="button" class="popi" data-popmove="${k}"><span class="pn"><b>${esc(l)}${s ? ' <span class="poptag">Suggested</span>' : ''}</b></span></button>`).join('');
   placePop(anchor);
@@ -2583,7 +2627,7 @@ async function saveFile(name, text, mime)
 /** CSV of the current list. Cells that a spreadsheet would run as a formula are neutralised. */
 function pipelineCsv()
 {
-  const cols = ['Ticket ID', 'Halo link', 'Title', 'Summary', 'Solution fit (DEV)', 'AI fit (DEV)', 'Pathway (DEV)', 'SF confidence (DEV)', 'Directorate', 'Branch', 'Team (stated)', 'Requester', 'Scope', 'Current effort', 'Requester priority', 'Halo stage', 'Raised', 'Waiting (days)', 'Workflow stage', 'Outcome', 'Assigned to', 'Readiness', 'Gates to clear', 'Quadrant', 'Payoff score', 'Feasibility score', 'Rank (AI ready)', 'Confidence', 'Requester estimate annual $', 'Rough AI estimate annual $', 'Decision by', 'Decision date', 'Comment', 'Note', 'Review notes', 'Meeting booked', 'Fortnightly coaching', 'Possible duplicate of', 'Original request'];
+  const cols = ['Ticket ID', 'Halo link', 'Title', 'Summary', 'Solution fit (DEV)', 'AI fit (DEV)', 'Pathway (DEV)', 'SF confidence (DEV)', 'Directorate', 'Branch', 'Team (stated)', 'Requester', 'Scope', 'Current effort', 'Requester priority', 'Halo stage', 'Raised', 'Waiting (days)', 'Workflow stage', 'Outcome', 'Assigned to', 'Readiness', 'Gates to clear', 'Quadrant', 'Payoff score', 'Feasibility score', 'Rank (AI ready)', 'Confidence', 'Requester estimate annual $', 'Rough AI estimate annual $', 'Decision by', 'Decision date', 'Comment', 'Note', 'Review notes', 'Meeting booked', 'Coaching booked', 'AI champion training booked', 'Business case', 'Possible duplicate of', 'Original request'];
   const cell = v =>
   {
     let s = v == null ? '' : String(v);
@@ -2593,7 +2637,7 @@ function pipelineCsv()
   const rows = DATA.filter(d => matches(d)).sort(sorter()).map(d =>
   {
     const t = TRIAGE[d.id] || {}, p = d.pr, rc = (REVIEW[d.id] && REVIEW[d.id].checks) || {};
-    return [d.id, HALO_URL(d.id), d.short, d.blurb, d.sf.clsLabel, d.sf.fitLabel, d.sf.pathLabel, d.sf.conf, d.dir, d.branch, d.team, d.req, d.scope, d.effort, d.pri, SL[d.stage] || d.stage, d.created, d.wait, TL[tstat(d)], t.outcome && OUTCOMES[t.outcome] ? OUTCOMES[t.outcome] : '', assigneeOf(d) ? assigneeOf(d).name : '', p.band, p.gatesFailed.join('; '), p.quadrant, p.payoff.toFixed(2), p.feas.toFixed(2), p.rank, p.confidence, d.est, Math.round(d.value), t.by ? who(t.by, t.byName) : '', t.at ? when(t.at) : '', t.comment, t.note, REVIEW[d.id] ? REVIEW[d.id].notes : '', rc.meeting ? 'Yes' : '', rc.coaching ? 'Yes' : '', d.dups.join(' '), d.title];
+    return [d.id, HALO_URL(d.id), d.short, d.blurb, d.sf.clsLabel, d.sf.fitLabel, d.sf.pathLabel, d.sf.conf, d.dir, d.branch, d.team, d.req, d.scope, d.effort, d.pri, SL[d.stage] || d.stage, d.created, d.wait, TL[tstat(d)], t.outcome && OUTCOMES[t.outcome] ? OUTCOMES[t.outcome] : '', assigneeOf(d) ? assigneeOf(d).name : '', p.band, p.gatesFailed.join('; '), p.quadrant, p.payoff.toFixed(2), p.feas.toFixed(2), p.rank, p.confidence, d.est, Math.round(d.value), t.by ? who(t.by, t.byName) : '', t.at ? when(t.at) : '', t.comment, t.note, REVIEW[d.id] ? REVIEW[d.id].notes : '', rc.meeting ? 'Yes' : '', rc.coaching ? 'Yes' : '', rc.training ? 'Yes' : '', REVIEW[d.id] ? REVIEW[d.id].bizcase : '', d.dups.join(' '), d.title];
   });
   return '﻿' + [cols, ...rows].map(r => r.map(cell).join(',')).join('\r\n');
 }
@@ -2670,7 +2714,7 @@ async function resetDemo()
 function triageAgenda()
 {
   const rows = DATA.filter(d => tstat(d) === 'devtriage').sort(sortRows);
-  return [`Dev triage agenda: ${rows.length} ${plural(rows.length, 'request')} (mock data)`, '', ...rows.flatMap((d, i) => [`${i + 1}. ${d.short} (#${d.id}, ${d.branch})`, `   Requester: ${d.req}. Assigned: ${assigneeOf(d) ? assigneeOf(d).name : 'nobody yet'}.`, `   ${d.pr.quadrant}, payoff ${s1(d.pr.payoff)}, feasibility ${s1(d.pr.feas)}. Suggested: ${TL[suggestedMove(d)]}.`, `   Notes: ${(REVIEW[d.id] && REVIEW[d.id].notes) || 'None recorded.'}`, ''])].join('\n');
+  return [`Dev triage agenda: ${rows.length} ${plural(rows.length, 'request')} (mock data)`, '', ...rows.flatMap((d, i) => [`${i + 1}. ${d.short} (#${d.id}, ${d.branch})`, `   Requester: ${d.req}. Assigned: ${assigneeOf(d) ? assigneeOf(d).name : 'nobody yet'}.`, `   ${d.pr.quadrant}, payoff ${s1(d.pr.payoff)}, feasibility ${s1(d.pr.feas)}. Suggested: ${TL[suggestedMove(d)]}.`, `   Notes: ${(REVIEW[d.id] && REVIEW[d.id].notes) || 'None recorded.'}`, ...(REVIEW[d.id] && REVIEW[d.id].bizcase ? ['   Business case:', ...REVIEW[d.id].bizcase.split('\n').map(l => `   ${l}`)] : []), ''])].join('\n');
 }
 
 // ===== Rewriting with Claude =====
@@ -2710,6 +2754,20 @@ function moveDrop(id, col)
 {
   const d = byId[id];
   if (!d || step(d) === col) return;
+  // A person is what puts a ticket in Business review, and removing them takes it out.
+  if (col === 'review' && !assigneeId(d))
+  {
+    const b = document.querySelector(`[data-card="${CSS.escape(id)}"] [data-assign]`);
+    if (tstat(d) !== 'unassigned') { act(id, 'review'); return }
+    if (b) openAssignPop(b, [id]);
+    return;
+  }
+  if (col === 'unassigned')
+  {
+    const back = tstat(d) === 'review' ? Promise.resolve() : decide([id], 'review', {outcome: null, comment: ''}, `Moved ${d.short} to Unassigned`);
+    back.then(() => assignTo([id], null));
+    return;
+  }
   const map = {review: 'review', devtriage: 'devtriage', copilot: 'copilot', enterprise: 'enterprise', done: 'complete', future: 'future'};
   act(id, map[col]);
 }
@@ -2782,6 +2840,7 @@ function command(c)
     case 'dr-next': stepDrawer(1); break;
     case 'dr-cancel': DR.mode = 'view'; DR.draft = null; renderDrawer(true); break;
     case 'fu-copy': if ($('fu-text')) { copyText($('fu-text').value, 'Message copied').then(ok => { if (!ok) { $('fu-text').select(); toast('Press Ctrl+C to copy the selected text') } }) } break;
+    case 'bc-copy': if ($('bc-text')) { copyText($('bc-text').value, 'Business case copied').then(ok => { if (!ok) { $('bc-text').select(); toast('Press Ctrl+C to copy the selected text') } }) } break;
     case 'fu-rewrite': rewriteFollowUp(); break;
     case 'fu-stop': if (fuCtl) fuCtl.abort(); break;
   }
@@ -2823,6 +2882,12 @@ document.addEventListener('change', e =>
     if (BOOKINGS.some(b => b[0] === key)) addLog(DR.id, el.checked ? 'booked' : 'unbooked', {what: key});
     return;
   }
+  if (el.id === 'bc-text')
+  {
+    DR.bc = el.value;
+    if (el.value !== ((REVIEW[DR.id] && REVIEW[DR.id].bizcase) || '')) saveReview(DR.id, {bizcase: el.value});
+    return;
+  }
   if (el.id === 'rv-notes')
   {
     DR.notes = el.value;
@@ -2848,6 +2913,7 @@ document.addEventListener('change', e =>
 document.addEventListener('input', e =>
 {
   if (e.target.id === 'fu-text') DR.fu = e.target.value;
+  if (e.target.id === 'bc-text') DR.bc = e.target.value;
   if (e.target.id === 'rv-notes') DR.notes = e.target.value;
   if (e.target.id === 'pop-q') { $('pop-list').innerHTML = assignList(POP.ids, e.target.value); return }
   if (e.target.closest && e.target.closest('#adj-form')) updateAdjPreview();
@@ -3023,7 +3089,7 @@ function wireChrome()
   };
   $('mine-btn').onclick = () =>
   {
-    T = T.preset === 'mine' ? {...emptyT(), step: 'review'} : {...emptyT(), preset: 'mine'};
+    T = T.preset === 'mine' ? {...emptyT(), step: 'unassigned'} : {...emptyT(), preset: 'mine'};
     VIEW = 'list';
     KB = null;
     SEL.clear();
@@ -3077,7 +3143,7 @@ function wireChrome()
     try
     {
       const r = await importHalo(files);
-      showStatus('ok', `Halo import complete, data as at ${r.asof}.`, ` ${r.n} new ${plural(r.n, 'request')} scored and added to Business review. ${r.u} existing refreshed (status and dates only, scores and decisions untouched). ${r.gone} no longer in Halo, kept and flagged.`);
+      showStatus('ok', `Halo import complete, data as at ${r.asof}.`, ` ${r.n} new ${plural(r.n, 'request')} scored and added to Unassigned. ${r.u} existing refreshed (status and dates only, scores and decisions untouched). ${r.gone} no longer in Halo, kept and flagged.`);
     }
     catch (e)
     {
