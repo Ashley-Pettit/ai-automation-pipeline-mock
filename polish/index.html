@@ -342,6 +342,13 @@ html{scrollbar-gutter:stable}
 @media (pointer:coarse){#tabs button{min-height:44px}#bens .halolink{display:inline-block;padding-block:12px}}
 @media (max-width:820px){.hwrap{padding:8px 16px}#tabs button{padding:0 6px}#bens .row .top{grid-template-columns:minmax(0,1fr)}#bens .row .top>.chips{grid-row:2;grid-column:1;justify-content:flex-start}}
 
+/* Phone: the four headline figures sit two by two, so the charts start sooner */
+@media (max-width:560px){
+  :is(#exec,#bens) .kpi.c3{grid-column:span 6;padding:12px}
+  :is(#exec,#bens) .kpi h3{font-size:13px;line-height:1.3;margin-bottom:8px}
+  :is(#exec,#bens) .kpi .big{font-size:26px}
+}
+
 /* The rank badge keeps white text, so its green stays dark in both themes */
 :is(#exec,#bens) .rank{background:#008348}
 :is(#opps,#ui){
@@ -1132,6 +1139,58 @@ body:has(.drawer.on) #ui .toasts{left:max(16px,calc(100vw - 704px));bottom:calc(
 @media (pointer:coarse){:is(#opps,#ui) .searchbox input{min-height:42px}
 :is(#opps,#ui) #help-btn{display:none}
 }
+:is(#opps,#ui) #more-btn,:is(#opps,#ui) #data-btn{border:1px solid var(--rule2);background:var(--card);color:var(--ink);font-weight:400}
+:is(#opps,#ui) #more-btn:hover,:is(#opps,#ui) #data-btn:hover{background:var(--soft);border-color:var(--accent)}
+:is(#opps,#ui) #more-btn svg{margin:0 6px 0 0;vertical-align:-3px}
+:is(#opps,#ui) #more-btn.on{border-color:var(--accent);color:var(--accent);font-weight:bold}
+:is(#opps,#ui) .f-btn{flex:none}
+:is(#opps,#ui) .listbar{align-items:center;gap:4px 16px;margin-bottom:6px}
+@media (pointer:fine){:is(#opps,#ui) .listbar .seg button{min-height:24px}
+}
+:is(#opps,#ui) .lead-tight{margin-bottom:4px}
+:is(#opps,#ui) #menu-status{display:none}
+:is(#opps,#ui) .listbar .count{margin-right:auto}
+:is(#opps,#ui) .listbar .seg{flex:none}
+:is(#opps,#ui) .rowtitle{color:var(--accent)}
+:is(#opps,#ui) .rowtitle:hover{text-decoration:underline;text-underline-offset:2px}
+:is(#opps,#ui) .queue .c-who{width:132px}
+:is(#opps,#ui) .queue td.c-who .small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+:is(#opps,#ui) .gates .gate-edit{grid-template-columns:minmax(0,1fr) 120px;align-items:center;padding:0}
+:is(#opps,#ui) .gate-edit .gpick select{width:100%;font-size:13px}
+:is(#opps,#ui) .ferr{margin-top:4px;font-size:12px;color:var(--bad-fg)}
+:is(#opps,#ui) [aria-invalid="true"]{border-color:var(--bad-fg)}
+@media (max-width:820px){:is(#opps,#ui) .lead-tight{display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:4px}
+:is(#opps,#ui) .lead-tight>div:first-child{flex:1 1 auto;min-width:0}
+:is(#opps,#ui) .lead-tight .leadside{flex:none}
+:is(#opps,#ui) .lead-tight p{display:none}
+:is(#opps,#ui) .lead-tight h2{font-size:20px}
+:is(#opps,#ui) .leadside,:is(#opps,#ui) .leadside .menu,:is(#opps,#ui) .leadside .menu .btn{width:auto}
+:is(#opps,#ui) .menupop{left:auto;right:0;width:min(280px,calc(100vw - 32px))}
+:is(#opps,#ui) .menunote{max-width:none}
+:is(#opps,#ui) .steps{margin-bottom:8px}
+:is(#opps,#ui) .filters.open .f-more{flex:1 1 calc(50% - 3px)!important;min-width:0}
+:is(#opps,#ui) .listbar .count{flex:1 1 0;min-width:0;order:1}
+:is(#opps,#ui) .listbar .seg{order:2}
+:is(#opps,#ui) .listbar .liststatus{display:none}
+:is(#opps,#ui) #menu-status{display:block}
+:is(#opps,#ui) .queue tr{grid-template-columns:minmax(0,1fr) auto;gap:2px 4px;padding:8px 4px 8px 12px;align-items:start}
+:is(#opps,#ui) .queue td.c-req{grid-column:1;grid-row:1}
+:is(#opps,#ui) .queue td.c-band{grid-column:1;grid-row:2}
+:is(#opps,#ui) .queue td.c-who{grid-column:1;grid-row:3}
+:is(#opps,#ui) .queue td.c-team{grid-column:1;grid-row:4}
+:is(#opps,#ui) .queue td.c-stage{grid-column:1;grid-row:5}
+:is(#opps,#ui) .queue td.c-act{grid-column:2;grid-row:1/span 5;align-self:center;display:block;width:auto}
+:is(#opps,#ui) .queue td.noval{display:none}
+:is(#opps,#ui) .queue .meta{white-space:normal}
+:is(#opps,#ui) .c-band .small{display:inline;margin-left:6px}
+:is(#opps,#ui) .queue td.c-who[data-l]::before,:is(#opps,#ui) .queue td.c-team[data-l]::before,:is(#opps,#ui) .queue td.c-stage[data-l]::before{content:attr(data-l) " ";display:inline;font-size:12px;color:var(--muted)}
+:is(#opps,#ui) .queue td.c-who .small,:is(#opps,#ui) .queue td.c-team .small,:is(#opps,#ui) .queue td.c-stage .small{display:inline}
+:is(#opps,#ui) .dr-foot .footbtns{flex-wrap:wrap;overflow:visible}
+}
+@media (pointer:coarse){:is(#opps,#ui) input:not([type=checkbox]):not([type=radio]),:is(#opps,#ui) select,:is(#opps,#ui) textarea{font-size:16px}
+:is(#opps,#ui) .gate-edit .gpick select{font-size:16px}
+:is(#opps,#ui) .rowtitle{min-height:36px;margin-block:-4px}
+}
 
 </style>
 
@@ -1185,6 +1244,7 @@ body:has(.drawer.on) #ui .toasts{left:max(16px,calc(100vw - 704px));bottom:calc(
           <hr id="reset-hr" class="needs-write">
           <button type="button" id="reset-demo" class="needs-write danger">Reset demo data</button>
           <p class="small menunote" id="last-import"></p>
+          <p class="small menunote" id="menu-status"></p>
         </div>
         <input type="file" id="importfile" accept=".json,application/json" hidden aria-label="Decisions file">
         <input type="file" id="halofile" accept=".xlsx,.xlsm,.csv" multiple hidden aria-label="Halo export files">
@@ -1199,13 +1259,9 @@ body:has(.drawer.on) #ui .toasts{left:max(16px,calc(100vw - 704px));bottom:calc(
   <div class="filters" id="filters">
     <div class="f f-search">
       <label class="sr" for="tq">Search requests</label>
-      <div class="searchbox"><svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><input id="tq" type="search" autocomplete="off" placeholder="Search opportunities, teams, requesters"><kbd aria-hidden="true">/</kbd></div>
+      <div class="searchbox"><svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><input id="tq" type="search" autocomplete="off" placeholder="Search requests or people"><kbd aria-hidden="true">/</kbd></div>
     </div>
     <div class="f f-btn"><button type="button" class="btn quiet" id="more-btn" aria-expanded="false" aria-controls="filters"></button></div>
-    <div class="seg" id="viewseg" role="group" aria-label="View">
-      <button type="button" data-view="list">List</button>
-      <button type="button" data-view="map">Map</button>
-    </div>
     <div class="f-break"></div>
     <div class="f f-more"><label class="sr" for="tf-band">Readiness</label><select id="tf-band"></select></div>
     <div class="f f-more"><label class="sr" for="tf-quad">Quadrant</label><select id="tf-quad"></select></div>
@@ -1220,6 +1276,10 @@ body:has(.drawer.on) #ui .toasts{left:max(16px,calc(100vw - 704px));bottom:calc(
   <div class="listbar">
     <p class="count" id="tcount" role="status"></p>
     <p class="liststatus small"><span id="tri-n"></span><span id="halo-n"></span><span id="tri-who"></span></p>
+    <div class="seg" id="viewseg" role="group" aria-label="View">
+      <button type="button" data-view="list">List</button>
+      <button type="button" data-view="map">Map</button>
+    </div>
   </div>
 
   <div id="v-list"></div>
@@ -1295,19 +1355,19 @@ const scopeLbl = {'Council-wide': 'Whole of Council', 'Branch': 'A branch', 'Tea
 // The same actions at each stage as the original: the likely ones on buttons, the rest under More.
 const MOVES = {
   untriaged: [['approved', 'Approve'], ['adjust', 'Adjust scores']],
-  approved: [['team', 'In progress: pick a team'], ['adjust', 'Adjust scores']],
-  in_progress: [['complete', 'Complete']],
+  approved: [['team', 'Pick a team'], ['adjust', 'Adjust scores']],
+  in_progress: [['complete', 'Mark complete']],
   complete: [['in_progress', 'Reopen']],
   closed: [['untriaged', 'Reopen to assessment']],
   future: [['approved', 'Approve'], ['adjust', 'Adjust scores']]
 };
 const MOVES_MORE = {
-  untriaged: [['closed', 'Close'], ['future', 'Future enhancement']],
-  approved: [['closed', 'Close'], ['future', 'Future enhancement'], ['untriaged', 'Back to assessment']],
-  in_progress: [['team', 'Change team'], ['approved', 'Back to triage'], ['closed', 'Close']],
+  untriaged: [['closed', 'Close request'], ['future', 'Park as future enhancement']],
+  approved: [['closed', 'Close request'], ['future', 'Park as future enhancement'], ['untriaged', 'Back to assessment']],
+  in_progress: [['team', 'Change team'], ['approved', 'Back to triage'], ['closed', 'Close request']],
   complete: [],
   closed: [],
-  future: [['untriaged', 'Bring back to assessment'], ['closed', 'Close']]
+  future: [['untriaged', 'Bring back to assessment'], ['closed', 'Close request']]
 };
 
 // ===== Small helpers =====
@@ -1750,6 +1810,7 @@ function renderBens()
 }
 
 // ===== Opportunities: filters =====
+const ICON_FILTER = '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M2 4h12M4.5 8h7M7 12h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
 const SF_GROUPS = ['AI ready', 'AI — discovery / evidence required', 'AI as a component', 'Reuse existing AI (Copilot / Claude)', 'Workflow / automation', 'Process / Council-system redirect', 'Unable to determine'];
 
 function matches(d)
@@ -1775,7 +1836,8 @@ const SORTFN = {
   rank: sortRows,
   name: (a, b) => a.short.localeCompare(b.short),
   band: (a, b) => bandOrder[a.pr.band] - bandOrder[b.pr.band] || sortRows(a, b),
-  team: (a, b) => teamOf(a).localeCompare(teamOf(b)) || sortRows(a, b)
+  team: (a, b) => teamOf(a).localeCompare(teamOf(b)) || sortRows(a, b),
+  who: (a, b) => ((assigneeOf(a) || {name: '\uffff'}).name).localeCompare((assigneeOf(b) || {name: '\uffff'}).name) || sortRows(a, b)
 };
 const sorter = () => (a, b) => SORT.dir * SORTFN[SORT.key](a, b);
 
@@ -1815,18 +1877,27 @@ function syncFilters()
   ['band', 'quad', 'pri', 'sf'].forEach(k => { $('tf-' + k).value = T[k] });
   if (document.activeElement !== $('tq')) $('tq').value = T.q;
   const n = ['band', 'quad', 'pri', 'sf', 'dir', 'branch', 'team'].filter(k => T[k]).length;
-  $('more-btn').textContent = `Filters${n ? ` (${n})` : ''}`;
+  $('more-btn').innerHTML = `${ICON_FILTER}Filters${n ? ` (${n})` : ''}`;
+  $('more-btn').classList.toggle('on', n > 0);
 }
 
 function renderSteps()
 {
   const sc = count(DATA, d => step(d));
-  $('steps').innerHTML = STEPS.map(s => `<button type="button" class="step" data-step="${s[0]}" data-fk="step-${s[0]}" aria-pressed="${T.step === s[0]}" data-tip="${esc(s[2])}"><span class="l">${esc(s[1])}</span><span class="n">${sc[s[0]] || 0}</span></button>`).join('');
+  const bar = $('steps'), x = bar.scrollLeft;
+  bar.innerHTML = STEPS.map(s => `<button type="button" class="step" data-step="${s[0]}" data-fk="step-${s[0]}" aria-pressed="${T.step === s[0]}" data-tip="${esc(s[2])}"><span class="l">${esc(s[1])}</span><span class="n">${sc[s[0]] || 0}</span></button>`).join('');
+  bar.scrollLeft = x;
+  const on = bar.querySelector('[aria-pressed="true"]');
+  if (on)
+  {
+    const b = bar.getBoundingClientRect(), r = on.getBoundingClientRect();
+    if (r.left < b.left || r.right > b.right) bar.scrollLeft += r.left - b.left - 16;
+  }
 }
 
-function renderChips()
+function renderChips(n)
 {
-  $('chips').innerHTML = anyFilter() ? '<button type="button" class="linkbtn" data-cmd="clear">Clear all filters</button>' : '';
+  $('chips').innerHTML = anyFilter() && (n || VIEW === 'map') ? '<button type="button" class="linkbtn" data-cmd="clear">Clear all filters</button>' : '';
 }
 
 // ===== Opportunities: list =====
@@ -1843,11 +1914,12 @@ function rowHTML(d)
 {
   const st = tstat(d), t = TRIAGE[d.id];
   const place = d.branch && d.branch !== 'Not stated' && !d.branch.startsWith('Not ') ? d.branch : '';
-  const meta = [`#${d.id}`, assigneeOf(d) ? `Assigned to ${assigneeOf(d).name}` : '', d.req, place, d.dups.length && st !== 'closed' ? 'Possible duplicate' : '', t && t.halo ? 'Halo updated' : ''].filter(Boolean).join(' · ');
+  const meta = [`#${d.id}`, d.req, place, d.dups.length && st !== 'closed' ? 'Possible duplicate' : '', t && t.halo ? 'Halo updated' : ''].filter(Boolean).join(' · ');
   return `<tr class="${st === 'closed' ? 'excluded ' : ''}${KB === d.id ? 'kb' : ''}" data-row="${esc(d.id)}">
     <td class="c-req"><button type="button" class="rowtitle" data-open="${esc(d.id)}" data-fk="open-${esc(d.id)}" title="${esc(d.blurb || '')}">${esc(d.short)}</button>${d.pri === 'High' ? '<span class="pri">High</span>' : ''}${isNew(d) ? '<span class="small"> New</span>' : ''}${pendingAdj(d) ? '<span class="small"> Adjusted, awaiting approval</span>' : ''}${d.gone ? '<span class="small"> Not in latest Halo export</span>' : ''}<div class="meta" title="${esc(meta)}">${esc(meta)}</div></td>
     <td class="c-band" data-l="Assessment">${assessCell(d.pr)}</td>
-    <td class="c-team" data-l="Team">${teamOf(d) ? `<span class="small stage-t">${esc(teamOf(d))}</span>` : '<span class="small">—</span>'}</td>
+    <td class="c-who ${assigneeOf(d) ? '' : 'noval'}" data-l="Assigned to">${assigneeOf(d) ? `<span class="small stage-t" title="${esc(assigneeOf(d).name)}">${esc(assigneeOf(d).name)}</span>` : ''}</td>
+    <td class="c-team ${teamOf(d) ? '' : 'noval'}" data-l="Team">${teamOf(d) ? `<span class="small stage-t">${esc(teamOf(d))}</span>` : '<span class="small">—</span>'}</td>
     <td class="c-stage" data-l="Stage"><div class="small stage-t">${esc(statusLabel(d))}</div></td>
     <td class="c-act">${haloLink(d, true)}</td>
   </tr>`;
@@ -1868,7 +1940,7 @@ function renderTable(rows)
     return;
   }
   $('v-list').innerHTML = `<div class="tablewrap"><table class="queue ${T.step ? 'nostage' : ''} ${['assess', 'triage'].includes(T.step) ? 'noteam' : ''}"><caption class="sr">Requests</caption><thead><tr>
-    ${sortHead('name', 'Request', 'c-req')}${sortHead('band', 'Assessment', 'c-band')}${sortHead('team', 'Team', 'c-team')}<th scope="col" class="c-stage">Stage</th><th scope="col" class="c-act"><span class="sr">Open in Halo</span></th>
+    ${sortHead('name', 'Request', 'c-req')}${sortHead('band', 'Assessment', 'c-band')}${sortHead('who', 'Assigned', 'c-who')}${sortHead('team', 'Team', 'c-team')}<th scope="col" class="c-stage">Stage</th><th scope="col" class="c-act"><span class="sr">Open in Halo</span></th>
   </tr></thead><tbody>${rows.map(rowHTML).join('')}</tbody></table></div>`;
 }
 
@@ -1905,10 +1977,11 @@ function renderMap()
 /** Everything on the Opportunities page that depends on filters. */
 function renderOpps()
 {
+  const had = document.activeElement && document.activeElement.dataset ? document.activeElement.dataset.fk : null;
   syncFilters();
   renderSteps();
-  renderChips();
   const rows = DATA.filter(matches).sort(sorter());
+  renderChips(rows.length);
   ROWS = rows.map(d => d.id);
   const stepDef = STEPS.find(s => s[0] === T.step);
   $('tcount').textContent = `${rows.length} in ${stepDef ? stepDef[1].toLowerCase() : 'all stages'} · ${DATA.filter(d => d.pr.rank).length} AI ready and ranked`;
@@ -1924,8 +1997,16 @@ function renderOpps()
   const todo = DATA.filter(d => TRIAGE[d.id] && TRIAGE[d.id].status && TRIAGE[d.id].status !== 'untriaged' && !TRIAGE[d.id].halo).length;
   $('halo-n').textContent = todo ? `${todo} ${plural(todo, 'decision')} still to mirror in Halo` : 'Halo is up to date';
   $('last-import').textContent = LASTIMPORT ? `Last Halo import ${when(LASTIMPORT.importedAt)}, data as at ${LASTIMPORT.asofText}.` : `No Halo import since this page was built (data as at ${ASOF}).`;
+  // On a phone the status lines move into the Import and export menu, to leave room for requests.
+  $('menu-status').textContent = `${$('tri-n').textContent}. ${$('halo-n').textContent}. ${$('tri-who').textContent}.`;
   const gone = Object.keys(TRIAGE).filter(k => !byId[k]);
   $('gone').innerHTML = gone.length ? `<div class="gone"><b>${gone.length} assessed ${plural(gone.length, 'request is', 'requests are')} no longer in the source export.</b> Decisions kept: ${gone.map(k => `#${esc(k)} ${esc(TRIAGE[k].short || '')}`).join(' · ')}</div>` : '';
+  // Pressing a tab or a column heading redraws it, so keep the keyboard where it was.
+  if (had && document.activeElement === document.body)
+  {
+    const el = document.querySelector(`[data-fk="${CSS.escape(had)}"]`);
+    if (el) el.focus({preventScroll: true});
+  }
 }
 
 // ===== Slide-over =====
@@ -2006,7 +2087,7 @@ function drawerHead(d)
     <button type="button" class="iconbtn" data-cmd="dr-close" data-fk="dr-close" data-tip="Close panel" aria-label="Close panel">×</button></div>
     <h2 id="dr-title" tabindex="-1">${esc(d.short)}</h2>
     <div class="meta">${esc([d.req, place].filter(Boolean).join(' · '))}${d.pri === 'High' ? ' · <span class="pri">High priority</span>' : ''}</div>
-    <div class="dr-ctl"><div class="ctl"><span class="ctl-l">Assigned to</span><span class="ctl-v">${assignButton(d)}</span></div><div class="ctl"><span class="ctl-l">Stage</span><span class="ctl-v"><b>${esc(statusLabel(d))}</b></span></div><div class="ctl"><span class="ctl-l">Team</span><span class="ctl-v"><b>${esc(teamOf(d) || '—')}</b></span></div></div>`;
+    <div class="dr-ctl"><div class="ctl"><span class="ctl-l">Assigned to</span><span class="ctl-v">${assignButton(d)}</span></div><div class="ctl"><span class="ctl-l">Stage</span><span class="ctl-v"><b>${esc(statusLabel(d))}</b></span></div>${teamOf(d) ? `<div class="ctl"><span class="ctl-l">Team</span><span class="ctl-v"><b>${esc(teamOf(d))}</b></span></div>` : ''}</div>`;
 }
 
 const plain = s => String(s).replace(/ — /g, ', ');
@@ -2068,7 +2149,7 @@ function adjustBody(d)
   const pick = (grp, k, v) => `<span class="pick" role="radiogroup" aria-label="Score">${[1, 2, 3, 4, 5].map(n => `<label><input type="radio" name="${grp}.${k}" value="${n}" ${n === v ? 'checked' : ''} aria-label="${n}"><span>${n}</span></label>`).join('')}</span>`;
   return `<div class="preview" id="adj-preview" role="status"></div>
     <form id="adj-form" class="block" style="display:grid;gap:16px">
-      <section><h4>Stage 2 gates</h4><div class="gates">${GK.map((k, i) => `<div class="gate" style="grid-template-columns:minmax(0,1fr)"><label class="gl" for="g-${k}">${esc(GL[i])}</label><span class="gpick"><select id="g-${k}" name="g.${k}">${['Pass', 'Conditional', 'Fail'].map(o => `<option ${o === dr.g[k] ? 'selected' : ''}>${o}</option>`).join('')}</select></span></div>`).join('')}</div></section>
+      <section><h4>Stage 2 gates</h4><div class="gates">${GK.map((k, i) => `<div class="gate gate-edit"><label class="gl" for="g-${k}">${esc(GL[i])}</label><span class="gpick"><select id="g-${k}" name="g.${k}">${['Pass', 'Conditional', 'Fail'].map(o => `<option ${o === dr.g[k] ? 'selected' : ''}>${o}</option>`).join('')}</select></span></div>`).join('')}</div></section>
       <section><h4>Payoff scores, 1 to 5</h4><div>${PK.map((k, i) => `<div class="metric"><div>${esc(PL[i])}<div class="me">${esc(p.ev[k])}</div></div>${pick('p', k, dr.p[k])}</div>`).join('')}</div></section>
       <section><h4>Feasibility scores, 1 to 5</h4><div>${FK.map((k, i) => `<div class="metric"><div>${esc(FL[i])}<div class="me">${esc(p.ev[k])}</div></div>${pick('f', k, dr.f[k])}</div>`).join('')}</div></section>
       <div class="fld"><label for="adj-note">Note</label><textarea id="adj-note" name="note" placeholder="For example: owner confirmed by email">${esc(dr.note)}</textarea><span class="help">Why you adjusted it, what was confirmed, who owns it.</span></div>
@@ -2097,13 +2178,13 @@ function drawerFoot(d)
   {
     const a = DR.action;
     const lbl = a === 'closed' ? 'Why is this being closed? For example: duplicate, not an AI use case, no sponsor.' : a === 'future' ? 'Why park it, and what would bring it back?' : 'Quick comment on what was delivered';
-    const verb = a === 'closed' ? 'Close' : a === 'future' ? 'Park as future enhancement' : 'Mark complete';
+    const verb = a === 'closed' ? 'Close request' : a === 'future' ? 'Park as future enhancement' : 'Mark complete';
     return `<form class="footform" id="comment-form"><label for="comment-in">${esc(lbl)} <span class="small">Optional</span></label><input id="comment-in" value="${esc(t.comment || '')}" autocomplete="off"><div class="footbtns"><button type="submit" class="btn ${a === 'closed' ? 'danger' : 'primary'}">${esc(verb)}</button><button type="button" class="btn" data-cmd="dr-cancel">Cancel</button></div></form>`;
   }
   if (DR.mode === 'team')
   {
     const cur = t.team || '', other = cur && !TEAMS.includes(cur);
-    return `<form class="footform teamform" id="team-form"><label for="team-sel">Assign to</label><select id="team-sel">${TEAMS.concat(['Other…']).map(o => `<option ${o === (other ? 'Other…' : cur) ? 'selected' : ''}>${esc(o)}</option>`).join('')}</select><div id="team-other-wrap" ${other ? '' : 'hidden'}><label for="team-other">Team name</label><input id="team-other" value="${esc(other ? cur : '')}" autocomplete="off"></div><div class="footbtns"><button type="submit" class="btn primary">Start: in progress</button><button type="button" class="btn" data-cmd="dr-cancel">Cancel</button></div></form>`;
+    return `<form class="footform teamform" id="team-form"><label for="team-sel">Delivery team</label><select id="team-sel">${TEAMS.concat(['Other…']).map(o => `<option ${o === (other ? 'Other…' : cur) ? 'selected' : ''}>${esc(o)}</option>`).join('')}</select><div id="team-other-wrap" ${other ? '' : 'hidden'}><label for="team-other">Team name</label><input id="team-other" value="${esc(other ? cur : '')}" autocomplete="off" aria-describedby="team-other-err"><p class="ferr" id="team-other-err" hidden>Enter a team name to start work.</p></div><div class="footbtns"><button type="submit" class="btn primary">Start work</button><button type="button" class="btn" data-cmd="dr-cancel">Cancel</button></div></form>`;
   }
   const st = tstat(d), main = MOVES[st], rest = MOVES_MORE[st].concat(st === 'untriaged' && t.adj ? [['reset', 'Reset']] : []);
   return `<div class="footbtns">${main.map(([a, l], i) => `<button type="button" class="btn ${i === 0 ? 'primary' : ''}" data-act="${a}" data-id="${esc(d.id)}" data-fk="act-${a}">${esc(l)}</button>`).join('')}${rest.length ? `<button type="button" class="btn quiet" data-more="${esc(d.id)}" data-fk="dr-more">More <span aria-hidden="true">▾</span></button>` : ''}</div>`;
@@ -2332,7 +2413,7 @@ function placePop(anchor)
 function assignList(id, filter)
 {
   const f = (filter || '').trim().toLowerCase(), cur = assigneeId(byId[id]);
-  const row = x => `<button type="button" class="popi ${cur === x.id ? 'cur' : ''}" data-popassign="${x.id}" ${cur === x.id ? 'aria-current="true"' : ''}>${avatar(x)}<span class="pn"><b>${esc(x.name)}</b><span>${esc(x.role)}</span></span><span class="pc" data-tip="Open requests held">${loadOf(x.id)}</span></button>`;
+  const row = x => `<button type="button" class="popi ${cur === x.id ? 'cur' : ''}" data-popassign="${x.id}" ${cur === x.id ? 'aria-current="true"' : ''}>${avatar(x)}<span class="pn"><b>${esc(x.name)}</b><span>${esc(x.role)} · ${loadOf(x.id)} open</span></span></button>`;
   const hits = PEOPLE.filter(x => !f || `${x.name} ${x.role}`.toLowerCase().includes(f)).sort((a, b) => loadOf(a.id) - loadOf(b.id));
   const reviewers = hits.filter(x => x.role !== 'Developer'), devs = hits.filter(x => x.role === 'Developer');
   return ((reviewers.length ? `<h5>BAs and coaches, least busy first</h5>${reviewers.map(row).join('')}` : '') + (devs.length ? `<h5>Developers</h5>${devs.map(row).join('')}` : '')) || '<p class="small" style="padding:8px">Nobody matches that name.</p>';
@@ -2587,6 +2668,7 @@ document.addEventListener('change', e =>
 document.addEventListener('input', e =>
 {
   if (e.target.id === 'pop-q') { $('pop-list').innerHTML = assignList(POP.ids[0], e.target.value); return }
+  if (e.target.id === 'team-other') { e.target.removeAttribute('aria-invalid'); $('team-other-err').hidden = true; return }
   if (e.target.closest && e.target.closest('#adj-form')) updateAdjPreview();
 });
 
@@ -2604,7 +2686,13 @@ document.addEventListener('submit', e =>
   else if (f.id === 'team-form')
   {
     const id = DR.id, d = byId[id], sel = $('team-sel').value, team = sel === 'Other…' ? $('team-other').value.trim() : sel;
-    if (!team) { $('team-other').focus(); return }
+    if (!team)
+    {
+      $('team-other').setAttribute('aria-invalid', 'true');
+      $('team-other-err').hidden = false;
+      $('team-other').focus();
+      return;
+    }
     DR.mode = 'view';
     decide(id, 'in_progress', {team}, `${d.short} is in progress with ${team}`).then(() => renderDrawer(true));
   }
@@ -2626,7 +2714,7 @@ function showTip(el)
   tip.hidden = false;
   const r = el.getBoundingClientRect(), t = tip.getBoundingClientRect();
   const left = Math.max(8, Math.min(window.innerWidth - t.width - 8, r.left + r.width / 2 - t.width / 2));
-  const top = r.top - t.height - 6 < 8 ? r.bottom + 6 : r.top - t.height - 6;
+  const top = r.top - t.height - 6 < 8 || el.closest('.steps') ? r.bottom + 6 : r.top - t.height - 6;
   tip.style.left = left + 'px';
   tip.style.top = top + 'px';
 }
